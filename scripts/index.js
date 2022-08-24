@@ -21,7 +21,7 @@ arr[2]="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/lune-aster-sunset
 
       x.src=arr[i];
 
-      console.log(i)
+      // console.log(i)
 
       if(i < arr.length -1){
 
