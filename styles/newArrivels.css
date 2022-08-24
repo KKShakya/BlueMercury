@@ -1,0 +1,31 @@
+#main{
+    display: flex;
+    border: 2px solid blue;
+    margin-top: 50px;
+}
+.box1{
+    border: 2px solid green;
+    width: 20%;
+    height: 600px;
+}
+.box2{
+    height: 600px;
+    width: 80%;
+    border: 2px solid red;
+}
+.box2>div{
+    display: flex;
+    justify-content: space-between;
+}
+.box2>div>select{
+    height: 40%;
+}
+#products{
+    border: 2px solid orange;
+    /* width: 80%; */
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+
+}
