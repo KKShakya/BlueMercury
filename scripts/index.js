@@ -29,7 +29,10 @@ function radio3() {
 
 function slideshow() {
   let x = document.getElementById("slide_link");
-
+  
+ let k = arr[i];
+  x.setAttribute("style", `background-image: url(${k})`);
+  
   let k1 = arr2[i];
 
   document.querySelector("#slide_line_text").innerHTML = k1;
