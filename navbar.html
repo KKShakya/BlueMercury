@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- font family from google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <!-- icon family from google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <!-- our own css navabr.css -->
+    <!-- <link rel="stylesheet" href="./styles/navbar.css" /> -->
+
+    <style>
+       #navbar {
+         font-family: "Roboto", "Montserrat", "Lucida Sans Unicode",
+           "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+       }
+
+       /* location ,logoimage and top-right-menu  css*/
+       #nav_link {
+         display: flex;
+         justify-content: space-between;
+         font-family: "Montserrat" sans-serif;
+       }
+
+       .shop_links ul {
+         display: flex;
+         gap: 1em;
+         text-transform: uppercase;
+         font-size: 14px;
+         margin-right: 5rem;
+       }
+
+       .shop_links ul li,
+       #locator {
+         display: flex;
+         align-items: center;
+         gap: 0.7em;
+         margin-top: -1em;
+       }
+
+       #locator {
+         margin-left: 3em;
+         text-transform: uppercase;
+         font-size: 14px;
+         margin-top: -2.1em;
+       }
+
+       .home-link {
+         color: #617b9b;
+         min-width: 129px;
+         max-width: 200px;
+         margin-left: 13em;
+         margin-top: 1.5em;
+       }
+       .home-link img {
+         width: 100%;
+         vertical-align: middle;
+         display: block;
+         margin-left: 2em;
+       }
+
+       /* ?bottom menu css */
+       #menu ul {
+         font-family: 'Montserrat' Light, sans-serif;
+         display: flex;
+         justify-content: center;
+         gap: 4em;
+         line-height: 24px;
+         font-size: 14px;
+         text-transform: uppercase;
+         font-weight: lighter;
+         color: #b4bbc7;
+       }
+
+       /* shop menu of hover; */
+       .shop-container {
+      
+         visibility: hidden;
+         /* display: none; */
+         border:2px solid black;
+         position: absolute;
+         left:0;
+       }
+      #menu ul li:hover>div,
+      .shop-container:hover{
+       visibility:visible;
+       /* opacity: 0.3s; */
+       /* display: block; */
+      }
+
+      .shop-item{
+        width:50%;
+        margin: auto;
+        display:grid;
+         grid-template-columns: 1fr 4fr;
+      }
+
+       .left-part{
+        border-right: 1px solid rgb(180, 180, 180);
+       }
+      .ul-styling{
+       display: flex;
+       flex-direction: column;
+       width:50%;
+      }
+
+      a,i{
+       display: block;
+      }
+
+      .ul-styling>li{
+       display:flex;
+justify-content: space-between;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <!-- navlinks parent -->
+      <div id="nav_link">
+        <!-- locator -->
+        <div id="locator">
+          <span class="material-symbols-outlined"> location_on </span>store &
+          spa locator
+        </div>
+
+        <!-- logo of bluemercury -->
+        <div class="logo home-link">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x.png?v=1648743182"
+            alt="logo"
+          />
+        </div>
+
+        <!-- this div contains upper rigth menus-->
+        <div class="shop_links wishlist cart">
+          <ul style="list-style-type: none">
+            <li>
+              <span class="material-symbols-outlined"> favorite </span>Wishlist
+            </li>
+            <li>
+              <span class="material-symbols-outlined"> search </span>Search
+            </li>
+            <li>
+              <span class="material-symbols-outlined"> account_circle </span
+              >Sign in/up
+            </li>
+            <li>
+              <span class="material-symbols-outlined"> shopping_bag </span>bag
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- bottom menu cards -->
+      <div id="menu">
+        <ul style="list-style-type: none">
+          <li>
+            <a href="#">Shop</a>
+            
+            <div class="shop-container hover-effect vis-hid">
+              <!-- this is the left part of shop undeemenu -->
+              <div class="shop-item wd-50 mg-auto">
+              <div class="undermenu">
+              <ul class="left-part ul-styling" style="list-style-type: none">
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+                <li><a href="#"></a> Shop <i>></i></li>
+              </ul>
+            </div>
+              <!-- right part partitions -->
+              <div class="right-part">
+                <!-- first  list -->
+                <ul class="fisrt-list ul-styling" style="list-style-type: none">
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                  <li><a href="#"></a>shop</li>
+                </ul>
+
+                 <!-- second list -->
+                 <ul
+                 class="second-list ul-styling"
+                 style="list-style-type: none"
+               >
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+                 <li><a href=""></a>shop</li>
+               </ul>
+               <!-- image -->
+               <img src="" alt="top rated product" />
+              </div>
+             </div>
+
+          </li>
+          <li><a href="#">New!</a></li>
+          <li><a href="#">brands</a></li>
+          <li><a href="#">explore</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">blue rewards</a></li>
+          <li><a href="#">routine reboot</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
