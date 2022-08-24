@@ -1,38 +1,142 @@
+let arr = [];
 
-let arr=[]
+arr[0] =
+  "https://cdn.shopify.com/s/files/1/0283/0185/2747/files/lightweight-skincare-hp-hero-des_1600x.jpg?v=1660596941";
+arr[1] =
+  "https://cdn.shopify.com/s/files/1/0283/0185/2747/files/routines-extend-your-summer-glow-hero-des_2800x.jpg?v=1660082597";
+arr[2] =
+  "https://cdn.shopify.com/s/files/1/0283/0185/2747/files/lune-aster-sunset-eyeshadow-hero-des_2800x.jpg?v=1659557146";
 
-arr[0]="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/lightweight-skincare-hp-hero-des_1600x.jpg?v=1660596941"
-arr[1]="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/routines-extend-your-summer-glow-hero-des_2800x.jpg?v=1660082597"
-arr[2]="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/lune-aster-sunset-eyeshadow-hero-des_2800x.jpg?v=1659557146"
-  
-   let i=0
+let arr2 = [
+  `<h1>Dew Drops</h1><p>Check out our favorite new and bestselling serums, lotions and lightweight creams, all of which hydrate beautifully without feeling the least bit heavy on your skin</p><a href="https://bluemercury.com/collections/best-products-for-glowing-skin">Shop Now</a>`,
+  `<h2><span>Routine</span><strong>Reboot</strong></h2><span>The</span><br><strong>"Extend Your Summer Glow"</strong><br><span>Routine</span><p>Proper pre-bed beauty prep will not only help you rest easy, but also simplify your AM routine. With just a few advance steps, you’ll hop out of bed looking bright-eyed, radiant and ready to go.</p><a href="https://bluemercury.com/products/the-extend-your-summer-glow-routine-bundle">Shop Now</a>`,
+  `<h2>Lune+Aster</h2><h1>Dusk + Shadows</h1><p> This new palette features five universal, sunset-inspired shades in matte and shimmer finishes, so you can easily create an alluring eye look!</p><a href="/products/lune-aster-sunset-eyeshadow-palette">Shop Now</a>`,
+];
 
-   function radio11(){
-        i=0
-        console.log("works")
-       document.querySelector("#radio1").innerHTML=""
-      }
+let i = 0;
 
-   function slideshow(){
+function radio1() {
+  i = 0;
+}
 
-      let x=document.getElementById("slide")
+function radio2() {
+  i = 1;
+}
 
-    
+function radio3() {
+  i = 2;
+}
 
-      x.src=arr[i];
+function slideshow() {
+  let x = document.getElementById("slide_link");
 
-      // console.log(i)
+  let k1 = arr2[i];
 
-      if(i < arr.length -1){
+  document.querySelector("#slide_line_text").innerHTML = k1;
 
-        i++
-      }else{
+  x.style.backgroundRepeat = "no-repeat";
+  x.style.backgroundSize = "contain";
 
-        i=0
-      }
+  x.style.height = "35rem";
+  x.style.width = "100%";
 
-      setTimeout("slideshow()", 5000)
+  if (i < arr.length - 1) {
+    i++;
+  } else {
+    i = 0;
+  }
 
-   }
+  setTimeout("slideshow()", 3000);
+}
 
-      window.onload=slideshow
+// window.onload=slideshow
+
+slideshow();
+
+let data = async () => {
+  try {
+    let res = await fetch(
+      "http://makeup-api.herokuapp.com/api/v1/products.json"
+    );
+
+    let data = await res.json();
+
+    console.log(data);
+
+    display(data);
+
+    display1(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+data();
+
+function display(arr) {
+  for (let i = 50; i < 70; i++) {
+    let div = document.createElement("div");
+
+    let img = document.createElement("img");
+
+    let x = arr[i].api_featured_image;
+
+    img.src = `https:${x}`;
+
+    let p = document.createElement("p");
+    p.innerText = arr[i].brand;
+    let p1 = document.createElement("p");
+    p1.innerText = arr[i].name;
+    let p2 = document.createElement("p");
+    p2.innerText = arr[i].price;
+
+    div.append(img, p, p1, p2);
+
+    document.querySelector("#slide_p1").append(div);
+
+    console.log(div);
+  }
+}
+
+let data1 = async () => {
+  try {
+    let res = await fetch(
+      "http://makeup-api.herokuapp.com/api/v1/products.json"
+    );
+
+    let data = await res.json();
+
+    console.log(data, "udsfhuhf");
+
+    display1(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+data1();
+
+function display1(arr) {
+  for (let i = 70; i <= 90; i++) {
+    let div = document.createElement("div");
+
+    let img = document.createElement("img");
+
+    let x = arr[i].api_featured_image;
+
+    img.src = `https:${x}`;
+
+    let p = document.createElement("p");
+    p.innerText = arr[i].brand;
+    let p1 = document.createElement("p");
+    p1.innerText = arr[i].name;
+    let p2 = document.createElement("p");
+    p2.innerText = arr[i].price;
+
+    div.append(img, p, p1, p2);
+
+    document.querySelector("#slide_p2").append(div);
+
+    console.log(div);
+  }
+}
