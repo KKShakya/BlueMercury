@@ -1,0 +1,117 @@
+body {
+    margin: 0px;
+    padding: 0px;
+  }
+  #navbar {
+    border: 1px solid red;
+    height: 7.5rem;
+  }
+  #slide_text {
+    height: 2.3rem;
+    border: 1px solid green;
+  }
+  #slide_link {
+    height: 35rem;
+    border: 1px solid black;
+    margin-bottom: 4rem;
+  }
+
+  #slide{
+    width: 100%;
+    height: 100%;
+   
+  }
+
+  .h2 {
+    text-align: center;
+    font-size: 28px;
+    font-family: Montserrat Regular, sans-serif;
+    letter-spacing: 1px;
+    line-height: 29px;
+    font-weight: inherit;
+  }
+
+  #slide_product1 {
+    height: 35rem;
+    background-color: antiquewhite;
+    margin-bottom: 4rem;
+  }
+
+  #slide_p1 {
+    width: 100%;
+    height: 20rem;
+    background-color: aqua;
+  }
+
+  .Container {
+    height: 50rem;
+    border: 1px solid blanchedalmond;
+    background-color: rgb(226, 204, 247);
+    margin-bottom: 4rem;
+  }
+
+  #slide_product2 {
+    background-color: aquamarine;
+    height: 35rem;
+    margin-bottom: 4rem;
+  }
+
+  #time_line1 {
+    background-color: bisque;
+    height: 33rem;
+    margin-bottom: 4rem;
+  }
+
+  #slide_product3 {
+    background-color: aquamarine;
+    height: 35rem;
+    margin-bottom: 4rem;
+  }
+
+  #time_line2 {
+    background-color: bisque;
+    height: 33rem;
+    margin-bottom: 4rem;
+  }
+
+  #buttom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    text-align: center;
+    width: 100%;
+   
+   
+
+    border: 1px solid red;
+  }
+  #buttom > div {
+    margin-left: 5px;
+    display: grid;
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 4px solid rgb(17, 230, 241);
+  }
+  #buttom > div > img {
+    width: 100%;
+  }
+
+  #ending > div > p {
+    font-family: Montserrat Light, sans-serif;
+  }
+
+  #buttom > div > span {
+    font-family: Montserrat Semi Bold, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 1rem;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  #footer {
+    height: 15rem;
+    background-color: rgb(162, 157, 157);
+  }
