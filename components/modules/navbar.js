@@ -137,7 +137,7 @@ function navbar(){
 
     <!-- Tabs under New!  -->
     <li>
-      <a href="#">New!</a>
+      <a href="./New_arrivel.html">New!</a>
       <div class="new-container shop-container">
         <div class="shop-item wd-50 mg-auto">
           <ul class="new-list ul-styling" style="list-style-type: none">
@@ -379,6 +379,8 @@ function navbar(){
         </div>
           </div>
     </li>
+
+    
   </ul>
 </div>`
 }
