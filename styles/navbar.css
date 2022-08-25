@@ -1,0 +1,90 @@
+#navbar {
+  font-family: "Roboto", "Montserrat", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+/* location ,logoimage and top-right-menu  css*/
+#nav_link {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat" sans-serif;
+}
+
+.shop_links ul {
+  display: flex;
+  gap: 1em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-right: 5rem;
+}
+
+.shop_links ul li,
+#locator {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+
+#locator {
+  margin-left: 3em;
+  text-transform: uppercase;
+  font-size: 14px;
+
+}
+
+.home-link {
+  color: #617b9b;
+  min-width: 129px;
+  max-width: 210px;
+  margin-left: 13em;
+  margin-top: 2em;
+}
+.home-link img {
+  width: 100%;
+  vertical-align: middle;
+  display: block;
+  margin-left: 2em;
+}
+
+/* ?bottom menu css */
+#menu ul {
+  font-family: 'Montserrat' Light, sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+  line-height: 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: lighter;
+
+}
+
+/* shop menu of hover; */
+.shop-container {
+  width: 80%;
+  margin: auto;
+  visibility: hidden;
+  /* display: none; */
+}
+#menu ul li:hover>div,
+.shop-container:hover{
+visibility:visible;
+/* opacity: 0.3s; */
+/* display: block; */
+}
+
+.ul-styling{
+display: flex;
+flex-direction: column;
+border: 1px solid green;
+}
+
+a,i{
+  text-decoration: 0;
+display: block;
+color: #7b889c;
+}
+
+.ul-styling>li{
+display:flex;
+}
