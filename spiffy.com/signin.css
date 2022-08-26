@@ -1,19 +1,29 @@
+*{
+    color: rgb(13, 13, 76);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
 div{
     min-width: 40%;
     max-width: 45%;
     border: 1px solid red;
     margin: auto;
+    margin-top: 250px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 input{
     display:block;
     max-width:100%;
-    min-width: 93%;
-    
+    min-width: 93%;    
     margin: auto;
-    padding: 10px;
+    padding: 10px;    
 }
 h1{
+    color: rgb(13, 13, 76);
     text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 p{
     text-align: center;
@@ -21,4 +31,8 @@ p{
 button{
     width: 100%;
     padding: 10px;
+    background-color: rgb(13, 13, 76);
+    cursor: pointer;
+    color: #fff;
+    border: none;
 }
