@@ -18,7 +18,7 @@ function navbar(){
   <div class="shop_links wishlist cart">
     <ul style="list-style-type: none">
       <li>
-        <span class="material-symbols-outlined"> favorite </span>Wishlist
+        <span class="material-symbols-outlined"> favorite </span><div onclick="permission1()">Wishlist</div>
       </li>
       <li>
         <span class="material-symbols-outlined"> search </span>Search
