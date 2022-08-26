@@ -28,13 +28,16 @@
 
             height: 30rem;
             margin-bottom: 4rem;
+
+           
           }
 
           #slide_line_text {
             width: 35%;
-            height: 30rem;
             text-align: center;
-            height: 25rem;
+            height: 18rem;
+            padding-left: 5rem;
+            margin-top: 2rem;
           }
 
           .h2 {
@@ -257,7 +260,7 @@
             }
 
             body {
-              min-width: 900px;
+              width: 979px;
             }
 
             #slide_line_text {
