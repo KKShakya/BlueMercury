@@ -40,7 +40,7 @@ function navbar(){
     <li>
       <a href="#">Shop</a>
     </li>
-    <li><a href="#">New!</a></li>
+    <li><a href="./New_arrivel.html">New!</a></li>
     <li><a href="#">brands</a></li>
     <li><a href="#">explore</a></li>
     <li><a href="#">Events</a></li>

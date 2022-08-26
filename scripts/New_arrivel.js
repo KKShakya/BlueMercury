@@ -1,9 +1,7 @@
-<script>
 
-
+// var onload=main()
 
 let main=async()=>{
-
 
 let res=await fetch('https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=60&currentPage=1',{
     method:'GET',
@@ -15,23 +13,81 @@ let res=await fetch('https://sephora.p.rapidapi.com/products/list?categoryId=cat
  	}
 });
 let data=await res.json()
-console.log(data.products)
-appendData(data.products)
+let datas=data.products
+appendData(datas)
+console.log(datas)
+
+document.querySelector("#sort").addEventListener("change",handleNameSort)
+
+function handleNameSort(){
+    let selected=document.querySelector("#sort").value
+    
+    if(selected==="LTH"){
+        datas.sort(function(a,b){   
+            if(a.currentSku.listPrice>b.currentSku.listPrice) return 1;
+            if(a.currentSku.listPrice<b.currentSku.listPrice) return -1;
+            return 0;
+        })
+        appendData(datas)
+    }
+    else if(selected="HTL"){
+        datas.sort(function(a,b){   
+            if(a.currentSku.listPrice>b.currentSku.listPrice) return -1;
+            if(a.currentSku.listPrice<b.currentSku.listPrice) return 11;
+            return 0;
+        })
+        appendData(datas)
+    }
+    else if(selected="Ascending"){
+        datas.sort(function(a,b){   
+            let x=a.displayName.toUpperCase();
+            let y=b.displayName.toUpperCase();
+            if(x>y) return 1;
+            if(x<y) return -1;
+            return 0;
+        })
+        appendData(datas)
+    }
+    else if(selected="Descending"){
+        datas.sort(function(a,b){   
+            let x=a.displayName.toUpperCase();
+            let y=b.displayName.toUpperCase();
+            if(x>y) return -1;
+            if(x<y) return 1;
+            return 0;
+        })
+        appendData(datas)
+    }
 
 }
 
+}
+let count=0;
 function appendData(data){
+    document.querySelector("#products").innerHTML=null
     data.forEach((elem)=>{
         let div=document.createElement("div")
+        div.addEventListener("click",function(){
+            item(elem)
+        })
+        count++
+        let brandName=document.createElement("h4")
+        brandName.innerText=elem.brandName
         let name=document.createElement("p")
-        name.innerText=elem.brandName
+        name.innerText=elem.displayName
         let image=document.createElement("img")
         image.src=elem.heroImage
+        let price=document.createElement("p")
+        price.innerText=elem.currentSku.listPrice
 
-
-
-        div.append(image,name)
+        div.append(image,brandName,name,price)
         document.querySelector("#products").append(div)
+        document.querySelector(".result>span").innerText=count;
     })
 }
-</script>
+
+function item(elem){
+    console.log(elem)
+    localStorage.setItem('items',JSON.stringify(elem))
+    window.location.href="items.html"
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+</head>
+<link rel="stylesheet" href="./styles/navbar.css" />
+<style>
+    #item-container{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+    }
+    .box1{
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    #names{
+      font-size: 25px;
+    }
+    h3{
+      display: inline;
+      margin-left: 15px;
+      font-size: 30px;
+    }
+    #addToBag{
+      width: 20rem;
+      height: 3rem;
+      font-size: 25px;
+      cursor: pointer;
+      background-color: #0e0ead;
+      color: white;
+    }
+    .material-symbols-outlined{
+      margin-left: 35px;
+    }
+    .btn{
+      width: 3rem;
+      height: 3rem;
+      cursor: pointer;
+      margin-left: 20px;
+      margin-top: 16px;
+      font-size: 25px;
+    }
+    #shipbutton{
+      font-size: 25px;
+      width: 30rem;
+      display: block;
+      margin-top: 20px;
+      height: 3rem;
+      background-color: white;
+      cursor: pointer;
+    }
+</style>
+<body>
+    <div id="navbar"></div>
+    <div id="item-container">
+    </div>
+</body>
+</html>
+<script type="module">
+    import {navbar} from './components/modules/navbar.js'
+    // console.log(navbar());
+    document.getElementById("navbar").innerHTML = navbar();
+  </script>
+<script>
+let data=JSON.parse(localStorage.getItem("items"))
+console.log(data)
+appendData(data)
+
+function appendData(data){
+    let div=document.createElement("div")
+    div.setAttribute("class","box1")
+    let div1=document.createElement("div")
+    let name=document.createElement("p")
+    name.innerText=data.displayName
+    name.setAttribute("id","names")
+    let brandName=document.createElement("h2")
+    brandName.innerText=data.brandName
+    
+    let image=document.createElement("img")
+    image.src=data.image450
+    let id=document.createElement("p")
+    id.innerText=`ID: ${data.productId}`
+    let rating=document.createElement("p")
+    rating.innerText=`Rating: ${data.rating}`
+    let review=document.createElement("p")
+    review=`Reviews: ${data.reviews}`
+    let price=document.createElement("p")
+    price.innerText=`Price: ${data.currentSku.listPrice}`
+    let span=document.createElement("span")
+    span.setAttribute("class","material-symbols-outlined")
+    span.innerText="local_mall"
+    let button=document.createElement("button")
+    button.setAttribute("id","addToBag")
+    button.innerText="ADD TO BAG"
+    let incbutton=document.createElement("button")
+    incbutton.innerText="+"
+    incbutton.setAttribute("class","btn")
+    let desbutton=document.createElement("button")
+    desbutton.innerText="-"
+    desbutton.setAttribute("class","btn")
+    let itemAmount=document.createElement("h3")
+    itemAmount.innerText=1
+    let shipbutton=document.createElement("button")
+    shipbutton.innerText="Shipping & Returns"
+    shipbutton.setAttribute("id","shipbutton")
+    shipbutton.addEventListener("click",function(){
+      console.log("ravi")
+    })
+
+
+    
+    button.append(span)
+    div.append(image)
+    div1.append(brandName,name,id,rating,review,price,button,incbutton,itemAmount,desbutton,shipbutton)
+    document.querySelector("#item-container").append(div,div1)
+
+}
+</script>
