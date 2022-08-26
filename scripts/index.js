@@ -77,13 +77,13 @@ let data = async () => {
 
     let data = await res.json();
 
-    console.log(data);
+    
 
-    display(data);
+    // display(data);
 
-    display1(data);
+    // display1(data);
 
-    display3(data)
+    // display3(data)
 
   } catch (err) {
     console.log(err);
@@ -113,29 +113,9 @@ function display(arr) {
 
     document.querySelector("#slide_p1").append(div);
 
-    console.log(div);
+  
   }
 }
-
-let data1 = async () => {
-  try {
-    let res = await fetch(
-      "http://makeup-api.herokuapp.com/api/v1/products.json"
-    );
-
-    let data = await res.json();
-
-    console.log(data, "udsfhuhf");
-
-    display1(data);
-
-    display3(data)
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-data1();
 
 function display1(arr) {
   for (let i = 70; i <= 90; i++) {
@@ -158,7 +138,7 @@ function display1(arr) {
 
     document.querySelector("#slide_p2").append(div);
 
-    console.log(div);
+    
   }
 }
 
@@ -184,7 +164,7 @@ function display3(arr) {
 
     document.querySelector("#slide_p3").append(div);
 
-    console.log(div);
+
   }
 }
 
