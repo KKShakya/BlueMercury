@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
     <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="./styles/navbar.css" />
 </head>
 <body>
+    <div id="navbar"></div>
     <div id="container">
     <h1>CREATE ACCOUNT</h2><br>
     <p id="p">Complete the form below to create a bluemercury.com account.</p>
@@ -45,5 +47,10 @@
     </div>
 </body>
 </html>
+<script type="module">
+    import {navbar} from './components/modules/navbar.js'
+    // console.log(navbar());
+    document.getElementById("navbar").innerHTML = navbar();
+  </script>
 
 <script src="signup.js"></script>
