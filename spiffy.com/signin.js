@@ -1,17 +1,21 @@
-let login = async () => {
-    let login_data = {        
-        password :document.getElementById('login_pass').value,
-        username : document.getElementById('login_email').value,        
-    };
-    let res = await fetch(`https://masai-api-mocker.herokuapp.com/auth/login`,{
-        method: 'POST',
-        body:JSON.stringify(login_data),
-        headers: {
-            'Content-Type':'application/json'
-        }
-    })
-    let data =await res.json();
-    console.log('data:', data)
-    // console.log(login_data)
-}
+let data = JSON.parse(localStorage.getItem('user'));
+let flag = false;
+function login() {
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
 
+  for (let i = 0; i < data.length; i++) {
+    let char = data[i];
+    if (char.username == username && char.password == password) {
+      flag = true;
+    }
+  }
+  if (flag == true) {
+    alert('Logged In');
+  } else {
+    alert('Wrong email or password');
+  }
+
+    location.replace("account.html")
+
+}
