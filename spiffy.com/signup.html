@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
     <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="./styles/navbar.css" />
 </head>
 <body>
+    <div id="navbar"></div>
     <div id="container">
     <h1>CREATE ACCOUNT</h2><br>
     <p id="p">Complete the form below to create a bluemercury.com account.</p>
     <input type="email" id="email" placeholder="Email*"><br>
-    <input type="text" id="first_name" placeholder="First Name*"><br>
-    <input type="text" id="last_name" placeholder="Last Name*"><br>
+    <input type="text" id="name" placeholder="Full Name*"><br>
     <input type="password" id="password" placeholder="Password*"><br>
-    <input type="tel" id="mobile" placeholder="Mobile"  hidden><br>
+    <input type="text" id="username" placeholder="Username*" hidden>
+    <input type="tel" id="mobile" placeholder="Mobile" value="0" hidden><br>
 
     <select name="Birtday Month" id="birth" >
         <option value="#">Birtday Month</option>
@@ -45,5 +47,16 @@
     </div>
 </body>
 </html>
+<script type="module">
+    import {navbar} from './components/modules/navbar.js'
+    // console.log(navbar());
+    document.getElementById("navbar").innerHTML = navbar();
+  </script>
 
 <script src="signup.js"></script>
+
+<script type="module">
+    import {navbar} from '../components/modules/navbar.js'
+    // console.log(navbar());
+    document.getElementById("navbar").innerHTML = navbar();
+  </script>

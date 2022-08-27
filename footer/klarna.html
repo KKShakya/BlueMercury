@@ -1,0 +1,183 @@
+
+<html >
+
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <!-- icon family from google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+<head>
+   
+  <style>
+    #photo{
+        display: flex;
+        width: 100%;
+        height: 400px;
+        position: relative;
+              
+    }
+    #photo>div>img{
+      width: 100%;
+    }
+    #photo>div>h1{
+        font-size: 70px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        margin-top: 70px;       
+        margin-left: 100px;
+        position: absolute;
+    }
+    #photo>div>h2{
+        position: absolute;
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 160px;       
+        margin-left: 35px; 
+        font-size: 35px;  
+        font-weight: 100;     
+    }
+    #photo>div>p{
+        position: absolute;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+        font-weight: 500; 
+        font-size: 17px;
+        margin: auto;
+        margin-top: 210px;
+        margin-left: 30px; 
+              
+        width: 30%;
+    }
+    #write{
+        width: 60%;
+        height: auto;
+        margin: auto;
+        margin-top: 50px;        
+        
+    }
+    #write>h2{
+        font-family: 'Times New Roman', Times, serif;
+        margin-left: 45px;
+        font-weight: 500;
+    }
+    #write>ol>li{
+        font-family: 'Montserrat', Montserrat Regular, sans-serif;
+        width: 80%;
+        color: rgb(156, 158, 160);
+        margin-left: 25px;
+        line-height: 25px;
+        font-size: 16px;
+    }
+    #write>ul>li{
+        font-family: 'Montserrat', Montserrat Regular, sans-serif;
+        width: 80%;
+        color: rgb(156, 158, 160);
+        margin-left: 25px;
+        line-height: 25px;
+        font-size: 16px;
+    }
+    #write>p{
+        font-family: 'Montserrat', Montserrat Regular, sans-serif;
+        margin-left: 45px;
+        width: 70%;        
+        line-height: 25px;
+        color: rgb(156, 158, 160);
+    }
+
+  </style>
+</head>
+<body>
+
+    <div id="navbar1"></div>
+
+    <div id="photo">
+       
+        <div>
+            <h1>Klarna.</h1>
+            <h2>SHOP NOW. PAY LATER.</h2>
+            <p>We’re excited to announce we have partnered with Klarna to bring you new ways to pay at checkout. It’s a safe and simple way to get the stuff you want, when you want it.</p>
+            <img src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/hero-des.jpg?v=1606163233">
+        </div>
+       
+    </div>
+    <div id="write">
+        <h2>PART 1: HOW IT WORKS</h2>
+        <ol>
+         <li>Add products to your cart and select “Klarna” when you check out </li> 
+         <li>  Enter a few personal details and you’ll know instantly if you’re approved</li>
+         <li> Klarna will send you an email confirmation and reminders when it’s time to pay</li> 
+         <li>You can complete your future Klarna purchases with just one click </li>  
+        </ol>
+
+        <h2>PART 2: PAYMENTS INFORMATION</h2>
+        <h2 style="font-weight: 300 ;
+         color: rgb(156, 158, 160);">Pay In 4 Interest-Free Installments</h2>
+        <p>Split your purchase into four equal payments. Just enter the credit or debit card details of your choice and make automatic payments every two weeks. No interest or fees when you pay on time.</p>
+        <p><u>Full terms of Pay later in 4 interest-free installments.</u></p>
+        <p style="font-style: italic;">*CA residents: Loans made or arranged pursuant to a California Finance Lenders Law license.</p>
+
+        <h2>PART 3: ABOUT KLARNA</h2>
+        <h2 style="font-weight: 300 ;
+         color: rgb(156, 158, 160);">Pay Online Or In The App</h2>
+        <p>Review your latest purchases and make payments in the Klarna app or online.
+
+        </p>
+
+        <ul>
+            <li>Download the Klarna app</li>
+            <li>Log in online.</li>
+            <li>Chat with customer service</li>
+            
+        </ul>
+        <h2 style="font-weight: 300 ;
+        color: rgb(66, 71, 73);">Safe & Secure</h2>
+        <p>With Klarna, you are always covered through Klarna’s Buyer Protection policy. Modern safeguards protect your information to prevent unauthorized purchases.</p>
+        
+        <h2 style="font-weight: 300 ;
+        color: rgb(66, 71, 73);">Frequently Asked Questions</h2>
+        <p>Visit our <u>FAQ page</u>  to find out more about using Klarna.</p>
+
+        <h2 style="font-weight: 300 ;
+        color: rgb(66, 71, 73);">About Klarna</h2>
+        <p>At Klarna, we have a relentless focus on creating the best shopping experience in the world. We believe payments are so much more than just a way to send money. That’s why our smooth payment methods give you more time, control and joy so you can focus on the things you love.</p>
+
+        <ul>
+            <li>80 million shoppers are using Klarna.</li>
+            <li>190,000 retailers are working with us worldwide.</li>
+            <li>We've been powering online checkouts for 14 years.</li>
+        </ul>
+
+    </div>
+
+    <div id="footer1"></div>    
+    
+</body>
+</html>
+
+<script type="module">
+
+    import { navbar } from "../components/modules/navbar.js" 
+    
+    let container1 = document.getElementById("navbar1");
+    
+    container1.innerHTML = navbar();
+    
+    </script>
+    
+    <script type="module">
+    
+      import { footer } from "../components/modules/footer.js" 
+      
+      let container2 = document.getElementById("footer1");
+      
+      container2.innerHTML = footer();
+      
+      </script>
+    
+    
+    

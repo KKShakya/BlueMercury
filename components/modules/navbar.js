@@ -18,7 +18,7 @@ async function navbar(){
   <div class="shop_links wishlist cart">
     <ul style="list-style-type: none">
       <li>
-        <span class="material-symbols-outlined"> favorite </span>Wishlist
+        <span class="material-symbols-outlined"> favorite </span><div onclick="permission1()">Wishlist</div>
       </li>
       <li>
         <span class="material-symbols-outlined"> search </span>Search
@@ -28,7 +28,9 @@ async function navbar(){
         >Sign in/up
       </li>
       <li>
+      <a href="./Cart.html">
         <span class="material-symbols-outlined"> shopping_bag </span>bag
+        </a>
       </li>
     </ul>
   </div>

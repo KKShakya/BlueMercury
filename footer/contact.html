@@ -1,19 +1,31 @@
 <html>
+
+<link rel="stylesheet" href="../styles/navbar.css">
+<link rel="stylesheet" href="../styles/footer.css">
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <!-- icon family from google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+ 
 <head>
   <style>
     #cont{
         width: 60%;
-        height: 1800px;
+        height: auto;
         margin: auto;
-        border: 1px solid red;
+       padding-top: 25px;
 
     }
     #cont>p{
         width:80%;
         margin: auto;        
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-        line-height: 27px;
-        
+        line-height: 27px;        
         color: rgb(114, 114, 114);
     }
     input{
@@ -74,6 +86,12 @@
   </style>
 </head>
 <body>
+
+  <div id="navbar1">
+
+  </div>
+
+
 <div id="cont">
     <h3 class="contact">CONTACT  US</h3>
     <p>We would like to hear from you. Please contact us using the form below with comments or questions for our Beauty Experts. We love to answer questions about our products and services, local charity opportunities or the latest products to hit our shelves.</p>
@@ -123,8 +141,41 @@
    
     <button>Send Message</button>
 </div>
-   
-    
+
+<div id="footer1">
+
+</div>
+
     
 </body>
 </html>
+ 
+
+<script type="module">
+
+import { navbar } from "../components/modules/navbar.js" 
+
+let container1 = document.getElementById("navbar1");
+
+container1.innerHTML = navbar();
+
+</script>
+
+<script type="module">
+
+  import { footer } from "../components/modules/footer.js" 
+  
+  let container2 = document.getElementById("footer1");
+  
+  container2.innerHTML = footer();
+  
+  </script>
+
+
+
+
+
+
+
+
+

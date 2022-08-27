@@ -1,18 +1,52 @@
 
-// var onload=main()
+let page;
+
+let url;
+function bath(){
+
+    page=2;
+    // console.log(page)
+    // url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=20&currentPage=2`
+
+    // let res=await fetch(url,{
+    //     method:'GET',
+    //     headers: {
+    //         'Content-Type':'application/json',
+    //         'X-RapidAPI-Key': '092a07a068msh595681c162b3a40p1f553bjsn2c590ce28b45',
+    //          'X-RapidAPI-Host': 'sephora.p.rapidapi.com'
+    //      }
+    // });
+    // let data=await res.json()
+    // console.log(data)
+    // let datas=data.products
+    // appendData(datas)   
+
+}
+
+// console.log(url)
+console.log(page)
+
+
+
 
 let main=async()=>{
 
-let res=await fetch('https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=60&currentPage=1',{
+
+
+
+    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=20&currentPage=${page}`
+    
+let res=await fetch(url,{
     method:'GET',
-    // body:JSON.stringify(register_data),
     headers: {
         'Content-Type':'application/json',
 		'X-RapidAPI-Key': '092a07a068msh595681c162b3a40p1f553bjsn2c590ce28b45',
  		'X-RapidAPI-Host': 'sephora.p.rapidapi.com'
  	}
 });
+
 let data=await res.json()
+console.log(data)
 let datas=data.products
 appendData(datas)
 console.log(datas)
@@ -60,17 +94,18 @@ function handleNameSort(){
     }
 
 }
-
+// }
 }
 let count=0;
 function appendData(data){
     document.querySelector("#products").innerHTML=null
+    count++
     data.forEach((elem)=>{
         let div=document.createElement("div")
         div.addEventListener("click",function(){
             item(elem)
         })
-        count++
+        // count++
         let brandName=document.createElement("h4")
         brandName.innerText=elem.brandName
         let name=document.createElement("p")

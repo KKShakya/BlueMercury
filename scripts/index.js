@@ -78,6 +78,8 @@ let data = async () => {
     let data = await res.json();
 
     // console.log(data);
+=======
+    
 
     display(data);
 
@@ -113,6 +115,7 @@ function display(arr) {
 
     document.querySelector("#slide_p1").append(div);
 
+
     // console.log(div);
   }
 }
@@ -137,6 +140,11 @@ let data1 = async () => {
 
 data1();
 
+=======
+  
+  }
+}
+
 function display1(arr) {
   for (let i = 70; i <= 90; i++) {
     let div = document.createElement("div");
@@ -158,7 +166,7 @@ function display1(arr) {
 
     document.querySelector("#slide_p2").append(div);
 
-    // console.log(div);
+
   }
 }
 
@@ -184,6 +192,7 @@ function display3(arr) {
 
     document.querySelector("#slide_p3").append(div);
 
+
     // console.log(div);
   }
 }
@@ -191,3 +200,11 @@ function display3(arr) {
 function routine_Reboot_page(){
   console.log("roputine");
 }
+=======
+
+  }
+}
+
+
+  
+

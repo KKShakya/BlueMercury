@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/checkout.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="box1">
+        <!-- logo here  -->
+
+        <div id="logo">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/blm-checkout-logo.png?113278"
+            alt=""
+          />
+        </div>
+
+        <div id="breadcrumb">
+          <ul>
+            <li><a href="#">Cart</a></li>
+            <li>
+              <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+            </li>
+            <li>
+              <strong><a href="#">Customer information</a></strong>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+            </li>
+            <li><a href="#">Shipping method</a></li>
+            <li>
+              <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+            </li>
+            <li><a href="#">Payment method</a></li>
+            <li>
+              <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <div id="form">
+          <h2>Contact information</h2>
+          <input id="email" type="email" placeholder="Email" /><br />
+
+          <div class="checkbox1">
+            <input type="checkbox" />
+            <p>Email me with news and offers</p>
+          </div>
+
+          <h2>Shipping address</h2>
+
+          <select id="select1">
+            <option value="">United states</option>
+          </select>
+
+          <br />
+
+          <input type="text" id="fname" placeholder="First name" />
+          <input type="text" id="lname" placeholder="Last name" />
+          <br />
+
+          <input type="text" id="address" placeholder="Address" />
+          <br />
+          <input
+            id="aprment"
+            type="text"
+            placeholder="Apartment, suite, etc. (optional)"
+          />
+
+          <br />
+
+          <input id="city" type="text" placeholder="City" />
+
+          <select id="select2">
+            <option value="">State</option>
+            <option value="">Alabama</option>
+            <option value="">Alaska</option>
+            <option value="">Arizona</option>
+            <option value="">Arkansas</option>
+            <option value="">California</option>
+            <option value="">Colorado</option>
+            <option value="">Delaeare</option>
+            <option value="">Florida</option>
+            <option value="">Georgia</option>
+          </select>
+
+          <input id="zip" type="text" placeholder="ZIP code" />
+
+          <br />
+
+          <div class="checkbox1">
+            <input type="checkbox" />
+            <p>Save this information for next time</p>
+          </div>
+
+          <br />
+
+          <p>
+            By continuing, you agree to Bluemercury's
+            <a href="#">Privacy Practices.</a>
+          </p>
+
+          <br />
+
+          <div id="buttom">
+            <p>
+              <i class="fa-solid fa-angle-left"></i
+              ><a href="#" style="padding-left: 5px"> RETURN TO CART</a>
+            </p>
+            <button onclick="shopping()">Continue to shipping method</button>
+          </div>
+
+          <br />
+
+          <hr />
+
+          <p>All rights reserved bluemercury</p>
+        </div>
+      </div>
+
+      <div id="box2"></div>
+    </div>
+  </body>
+</html>
+<script
+  src="https://kit.fontawesome.com/3c324d3c0c.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  let shopping = () => {
+    let email = document.querySelector("#email");
+
+    let name = document.querySelector("#fname");
+
+    let name2 = document.querySelector("#lname");
+
+    let address = document.querySelector("#address");
+
+    let apartment = document.querySelector("#aprment");
+
+    let zip = document.querySelector("#zip")
+
+    if (email.value === "") {
+      document.querySelector("#email").style.border = "solid red";
+    } else {
+      document.querySelector("#email").style.border = "solid black";
+    }
+
+    if (name.value === "") {
+      document.querySelector("#fname").style.border = "solid red";
+    } else {
+      document.querySelector("#fname").style.border = "solid black";
+    }
+
+    if (name2.value === "") {
+      document.querySelector("#lname").style.border = "solid red";
+    } else {
+      document.querySelector("#lname").style.border = "solid black";
+    }
+
+    if (address.value === "") {
+      document.querySelector("#address").style.border = "solid red";
+    } else {
+      document.querySelector("#address").style.border = "solid black";
+    }
+
+    if (apartment.value === "") {
+      document.querySelector("#aprment").style.border = "solid red";
+    } else {
+      document.querySelector("#aprment").style.border = "solid black";
+    }
+
+    // if (zip.value === "") {
+    //   document.querySelector("#zip").style.border = "solid red";
+    // } else {
+    //   document.querySelector("#zip").style.border = "solid black";
+    // }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  };
+</script>
