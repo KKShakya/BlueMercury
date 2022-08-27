@@ -40,25 +40,25 @@ async function navbar(){
 <div id="menu">
   <ul style="list-style-type: none">
     <li>
-      <a href="#">Shop</a>
+      <a href="./New_arrivel.html">Shop</a>
 
       <div class="shop-container hover-effect vis-hid">
         <div class="shop-item wd-50 mg-auto">
           <div class="left-part">
             <ul class="ul-styling" style="list-style-type: none">
               <li>
-                <a href="#">Skin care</a> <i class="right-arrow">></i>
+                <a onclick="Skins()" >Skin care</a> <i class="right-arrow">></i>
               </li>
-              <li><a href="#">Makeup</a> <i class="right-arrow">></i></li>
-              <li><a href="#">hair</a> <i class="right-arrow">></i></li>
+              <li><a onclick="Makeup()">Makeup</a> <i class="right-arrow">></i></li>
+              <li><a onclick="Hair()">hair</a> <i class="right-arrow">></i></li>
               <li>
-                <a href="#">bath & body</a> <i class="right-arrow">></i>
-              </li>
-              <li>
-                <a href="#">fragrance</a> <i class="right-arrow">></i>
+                <a onclick="bath()">bath & body</a> <i class="right-arrow">></i>
               </li>
               <li>
-                <a href="#">tools & accessories</a>
+                <a onclick="Fragrance()">fragrance</a> <i class="right-arrow">></i>
+              </li>
+              <li>
+                <a >tools & accessories</a>
                 <i class="right-arrow">></i>
               </li>
               <li>
@@ -90,8 +90,8 @@ async function navbar(){
               style="list-style-type: none"
             >
               <li><a href="#" style="color: #12284c">BY CATEGORY</a></li>
-              <li><a href="#">Shop All</a></li>
-              <li><a href="#">Cleansers</a></li>
+              <li><a onclick="bitem1()">Best Skin Care </a></li>
+              <li><a onclick="blip()">Best Lip care</a></li>
               <li><a href="#">Exfoliators & Peels</a></li>
               <li><a href="#">Eye Care</a></li>
               <li><a href="#">Lip Care</a></li>

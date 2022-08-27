@@ -5,13 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles/checkout.css" />
+    <link rel="stylesheet" href="styles/checkout.css"/>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+  <link rel="stylesheet" href="./styles/navbar.css" />
+  <link rel="stylesheet" href="./styles/footer.css">
   </head>
   <body>
-    <div id="main">
+    <div id="navbar"></div>
+    <!-- <div id="main"> -->
       <div id="box1">
         <!-- logo here  -->
-
         <div id="logo">
           <img
             src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/blm-checkout-logo.png?113278"
@@ -41,13 +51,12 @@
             </li>
           </ul>
         </div>
-
         <div id="form">
           <h2>Contact information</h2>
           <input id="email" type="email" placeholder="Email" /><br />
 
           <div class="checkbox1">
-            <input type="checkbox" />
+            <input type="checkbox"/>
             <p>Email me with news and offers</p>
           </div>
 
@@ -56,15 +65,12 @@
           <select id="select1">
             <option value="">United states</option>
           </select>
-
-          <br />
-
+          <br/>
           <input type="text" id="fname" placeholder="First name" />
           <input type="text" id="lname" placeholder="Last name" />
-          <br />
-
+          <br/>
           <input type="text" id="address" placeholder="Address" />
-          <br />
+          <br/>
           <input
             id="aprment"
             type="text"
@@ -89,116 +95,73 @@
           </select>
 
           <input id="zip" type="text" placeholder="ZIP code" />
-
           <br />
 
           <div class="checkbox1">
             <input type="checkbox" />
             <p>Save this information for next time</p>
           </div>
-
           <br />
-
           <p>
             By continuing, you agree to Bluemercury's
             <a href="#">Privacy Practices.</a>
           </p>
-
           <br />
-
           <div id="buttom">
             <p>
               <i class="fa-solid fa-angle-left"></i
-              ><a href="#" style="padding-left: 5px"> RETURN TO CART</a>
+              ><a href="Cart.html" style="padding-left: 5px"> RETURN TO CART</a>
             </p>
             <button onclick="shopping()">Continue to shipping method</button>
           </div>
-
           <br />
-
           <hr />
-
           <p>All rights reserved bluemercury</p>
         </div>
       </div>
-
-      <div id="box2"></div>
-    </div>
+      <div id="footer"></div>
   </body>
 </html>
 <script
   src="https://kit.fontawesome.com/3c324d3c0c.js"
   crossorigin="anonymous"
 ></script>
+<script type="module">
+  import { navbar } from "./components/modules/navbar.js";
+  // console.log(navbar());
+  document.getElementById("navbar").innerHTML = navbar();
+</script>
 
 <script>
+  let flag=false;
   let shopping = () => {
     let email = document.querySelector("#email");
-
-    let name = document.querySelector("#fname");
-
+    let name = document.querySelector("#fname").value;
     let name2 = document.querySelector("#lname");
-
     let address = document.querySelector("#address");
-
     let apartment = document.querySelector("#aprment");
-
     let zip = document.querySelector("#zip")
-
-    if (email.value === "") {
+    
+    if (email.value === "" ||name.value === "" ||name2.value === ""
+    ||address.value === "" ||apartment.value === "" ) {
       document.querySelector("#email").style.border = "solid red";
+      document.querySelector("#fname").style.border = "solid red";
+      document.querySelector("#lname").style.border = "solid red";
+      document.querySelector("#address").style.border = "solid red";
+      document.querySelector("#aprment").style.border = "solid red";
+      alert("Fill all fields")
     } else {
       document.querySelector("#email").style.border = "solid black";
-    }
-
-    if (name.value === "") {
-      document.querySelector("#fname").style.border = "solid red";
-    } else {
       document.querySelector("#fname").style.border = "solid black";
-    }
-
-    if (name2.value === "") {
-      document.querySelector("#lname").style.border = "solid red";
-    } else {
       document.querySelector("#lname").style.border = "solid black";
-    }
-
-    if (address.value === "") {
-      document.querySelector("#address").style.border = "solid red";
-    } else {
       document.querySelector("#address").style.border = "solid black";
-    }
-
-    if (apartment.value === "") {
-      document.querySelector("#aprment").style.border = "solid red";
-    } else {
       document.querySelector("#aprment").style.border = "solid black";
+      alert (`${name} Your order is placed succefully`)
     }
-
-    // if (zip.value === "") {
-    //   document.querySelector("#zip").style.border = "solid red";
-    // } else {
-    //   document.querySelector("#zip").style.border = "solid black";
-    // }
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   };
+</script>
+
+<script type="module">
+import {footer} from "./components/modules/footer.js";
+document.getElementById("footer").innerHTML=footer()
 </script>

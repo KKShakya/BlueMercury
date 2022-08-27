@@ -3,7 +3,12 @@
     height: 320px;
     display: flex;
     margin: auto;
+
+    border-top: 2px solid black;
+   
+=======
     margin-top: 50px;
+
   }
   
   #containers>div:nth-child(1){
