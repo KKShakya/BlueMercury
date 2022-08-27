@@ -27,17 +27,7 @@
 
   </head>
 
-  <!-- slick slider  -->
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
-
-
-
-
-
-
+  
   <body>
     <!-- navbar here  -->
     <div id="navbar"></div>
@@ -64,7 +54,7 @@
         kinds of breakouts, while protecting and nourishing your skin.
       </p>
 
-      <div id="box" >
+      <div id="box">
         <div>
           <img
             src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/zitsticka_coop_800x.progressive.jpg?v=1660762100"
@@ -187,7 +177,7 @@
           src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/samples-content_block_705x705.jpg?v=1604551537"
           alt=""
         />
-        <span>Free Gifts With Purchase</span>
+        <span><p>Free Gifts With Purchase</p></span>
         <p>
           Stock up on all your favorite brands, then try something new on us
         </p>
@@ -198,7 +188,7 @@
           src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/consultation_promo_nav_1_705x705.jpg?v=1657733426"
           alt=""
         />
-        <span>Complimentary In-Store Consultations!</span>
+        <span><p>Complimentary In-Store Consultations!</p></span>
         <p>
           Our Beauty Experts can show you quick makeup application tricks and
           how to revamp your skincare regimen.
@@ -210,7 +200,7 @@
           src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/spa_menu_photo_705x705.jpg?v=1628018315"
           alt=""
         />
-        <span>Bluemercury Spa</span>
+        <span><p>Bluemercury Spa</p></span>
         <p>
           Our luxurious spa services are customizable to your individual needs
         </p>
@@ -221,56 +211,6 @@
     <footer id="footer"></footer>
 
 
-
-    <!-- slick slider                                        iam working in slick slider part -->
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-
-
-
-
-<script>
-  var $carousel = $('.slider');
-
-var settings = {
-  dots: false,
-  arrows: false,
-  slide: '.slick-slideshow__slide',
-  slidesToShow: 3,
-  centerMode: true,
-  centerPadding: '60px',
-};
-
-function setSlideVisibility() {
-  //Find the visible slides i.e. where aria-hidden="false"
-  var visibleSlides = $carousel.find('.slick-slideshow__slide[aria-hidden="false"]');
-  //Make sure all of the visible slides have an opacity of 1
-  $(visibleSlides).each(function() {
-    $(this).css('opacity', 1);
-  });
-
-  //Set the opacity of the first and last partial slides.
-  $(visibleSlides).first().prev().css('opacity', 0);
-}
-
-$carousel.slick(settings);
-$carousel.slick('slickGoTo', 1);
-setSlideVisibility();
-
-$carousel.on('afterChange', function() {
-  setSlideVisibility();
-});
-
-
-
-
-
-
-
 </script>
   </body>
 </html>
@@ -278,10 +218,16 @@ $carousel.on('afterChange', function() {
 
 
 
+
 <script type="module">
   import { navbar } from "./components/modules/navbar.js";
   // console.log(navbar());
-  document.getElementById("navbar").innerHTML = navbar();
+  document.getElementById("navbar").innerHTML = await navbar();
+  
+  document.getElementById("locator").addEventListener("click",function(){
+    window.location.href="new_arrivel.html"
+  })
+
 </script>
 
 <script src="scripts/index.js"></script>

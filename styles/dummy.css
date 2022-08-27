@@ -1,0 +1,243 @@
+#navbar {
+  font-family: "Roboto", "Montserrat", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+/* location ,logoimage and top-right-menu  css*/
+#nav_link {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat" sans-serif;
+}
+
+.shop_links ul {
+  display: flex;
+  gap: 1em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-right: 5rem;
+}
+
+.shop_links ul li,
+#locator {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  margin-top: -1em;
+}
+
+#locator {
+  margin-left: 3em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: -2.1em;
+}
+
+.home-link {
+  color: #617b9b;
+  min-width: 129px;
+  max-width: 200px;
+  margin-left: 13em;
+  margin-top: 1.5em;
+}
+.home-link img {
+  max-width: 100%;
+  display: inline-block;
+  margin-left: 2em;
+}
+
+/* ?bottom menu css */
+#menu ul {
+  font-family: "Montserrat" Light, sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+  line-height: 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  color: #b4bbc7;
+}
+
+/* shop menu of hover; */
+.shop-container {
+  visibility: hidden;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 1.6em;
+  border-top: 1px solid rgb(219, 215, 215);
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+#menu ul li:hover > div,
+.shop-container:hover {
+  visibility: visible;
+  display: inline-flex;
+  transition: ease-in-out 250ms;
+}
+
+/* //right -arrow hover property */
+.left-part ul li > a:hover + .right-arrow,
+.left-part ul li > a:hover {
+  visibility: visible;
+  color: #12284c;
+}
+
+/* another conatiner inside shop conatiner */
+.shop-item {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  margin-top: 1em;
+  /* padding-top:1.5em; */
+}
+
+.left-part {
+  border-right: 1px solid rgb(219, 215, 215);
+}
+.left-part ul li > a {
+  font-size: 1rem;
+  color: #95adca;
+}
+.right-arrow {
+  visibility: hidden;
+  /* background-color: rgb(53, 16, 216);; */
+}
+.ul-styling {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4em;
+}
+
+a,
+i {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.ul-styling > li {
+  display: flex;
+  gap: 3em;
+  color: #617b9b;
+  margin-bottom: -3.5em;
+}
+
+/* right part of border designing having twolist and image */
+.right-part {
+  /* border:1px solid yellow; */
+  display: flex;
+  justify-content: start;
+}
+
+.right-part ul li {
+  font-size: 13px;
+  color: red;
+  margin-bottom: -4em;
+}
+
+.right-part ul li > a {
+  color: #95adca;
+  text-transform: none;
+}
+#image-container {
+  width: 35%;
+  margin-left: 2em;
+}
+#image-container h4 {
+  margin-bottom: -10px;
+  text-transform: none;
+  color: #55657f;
+}
+h4 + p {
+  font-size: 12px;
+}
+
+/* new  conatiner*/
+.wd-50 {
+  display: flex;
+  justify-content: center;
+}
+.new-list li > a {
+  color: #617b9b;
+  text-transform: none;
+}
+
+/* search bar csss starts here */
+#searchBar {
+  background-color: #fff;
+  margin-top: -10px;
+}
+
+#searchElement {
+  width: 85%;
+  margin: auto;
+  display: block;
+  padding: 8px;
+  border: none;
+  font-size: 1.1rem;
+  /* visibility:hidden; */
+}
+
+#searchElement:focus {
+  outline: none;
+}
+
+/* search bar container css */
+.Search-container {
+  width: 85%;
+  margin: auto;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  padding: 10px 25px;
+  gap: 20px;
+  /* visibility:hidden; */
+}
+
+#search-left-div > p {
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgb(209, 208, 208);
+}
+
+#search-right-div > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.data-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  overflow-y: scroll;
+}
+.data-container > div {
+  display: flex;
+  gap: 20px;
+}
+.data-container > div > img {
+  width: 30%;
+  border-radius: 5px;
+}
+.data-container > div > p {
+  text-align: center;
+  color: #12284c;
+}
+
+.disabled{
+  pointer-events: none;
+}
+
+
+@media all and (max-width: 1000px){
+#menu{
+  visibility:hidden;
+}
+.nav-link-text-key{
+  visibility:hidden;
+}
+.shop_links ul li{
+  gap:0px;
+}
+}
