@@ -78,7 +78,7 @@ let data = async () => {
     let data = await res.json();
 
     // console.log(data);
-=======
+
     
 
     display(data);
@@ -140,10 +140,9 @@ let data1 = async () => {
 
 data1();
 
-=======
+
   
-  }
-}
+  
 
 function display1(arr) {
   for (let i = 70; i <= 90; i++) {
@@ -200,10 +199,8 @@ function display3(arr) {
 function routine_Reboot_page(){
   console.log("roputine");
 }
-=======
 
-  }
-}
+
 
 
   

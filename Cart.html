@@ -128,11 +128,11 @@
 </html>
 <script type="module">
     import {navbar} from './components/modules/navbar.js'
-    document.getElementById("navbar").innerHTML = navbar();
+    document.getElementById("navbar").innerHTML = await navbar();
   </script>
 <script type="module">
     import {footer} from "./components/modules/footer.js";
-    document.getElementById("footer").innerHTML=footer()
+    document.getElementById("footer").innerHTML= await footer()
     </script>
   <script>
 

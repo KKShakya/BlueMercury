@@ -8,6 +8,7 @@
           position:sticky;
           top:0;
           background:#fff;
+          max-width:100vw;
       }
 
       /* location ,logoimage and top-right-menu  css*/
@@ -16,6 +17,10 @@
         justify-content: space-between;
         font-family: "Montserrat" sans-serif;
       }
+       
+      .shop_links{
+        margin-top: 5px;
+      }
 
       .shop_links ul {
         display: flex;
@@ -23,6 +28,7 @@
         text-transform: uppercase;
         font-size: 14px;
         margin-right: 5rem;
+    
       }
 
       .shop_links ul li,
@@ -187,6 +193,7 @@
         border: none;
         font-size: 1.1rem;
         visibility:hidden;
+        display: none;
       }
 
       #searchElement:focus {
@@ -203,6 +210,7 @@
         padding: 10px 25px;
         gap: 20px;
         visibility:hidden;
+        display: none;
       }
 
       #search-left-div > p {
@@ -238,16 +246,18 @@
         pointer-events: none;
       }
       
-
+/* media queries */
       @media all and (max-width: 1000px){
       #menu{
         visibility:hidden;
+        display: none;
       }
       .nav-link-text-key{
         visibility:hidden;
+        display: none;
       }
       .shop_links ul li{
-        gap:0px;
+       margin-left:-5em;
       }
     }
 
@@ -262,7 +272,7 @@
       padding: 8px 0px;
       font-size: 12px;
     }
-=======
+
 #navbar {
   font-family: "Roboto", "Montserrat", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif;
@@ -377,14 +387,14 @@
   padding-bottom: 4em;
 }
 
-a,
+#navbar a,
 i {
   display: inline-block;
   text-decoration: none;
 }
 
 
-}
+
 
 /* right part of border designing having twolist and image */
 .right-part {
@@ -426,3 +436,14 @@ h4 + p {
   text-transform: none;
 }
 
+
+
+
+
+.free-rewards {
+  background-color: #d7ebf2;
+  color: #12284c;
+  text-align: center;
+  padding: 8px 0px;
+  font-size: 12px;
+}

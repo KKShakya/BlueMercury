@@ -24,6 +24,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
 
+    <link rel="stylesheet" href="./styles/footer.css">
 
   </head>
 
@@ -208,7 +209,9 @@
       </div>
     </div>
 
-    <footer id="footer"></footer>
+    <div id="footer">
+
+    </div>
 
 
 </script>
@@ -228,6 +231,13 @@
     window.location.href="new_arrivel.html"
   })
 
+</script>
+
+<script type="module">
+  import { footer } from "./components/modules/footer.js";
+  // console.log(navbar());
+  document.getElementById("footer").innerHTML = await footer();
+  
 </script>
 
 <script src="scripts/index.js"></script>
