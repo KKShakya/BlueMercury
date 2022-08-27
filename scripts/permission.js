@@ -6,7 +6,7 @@ let wish=document.querySelector("#permission")
 let nav=document.querySelector("#navbar")
 
 let obja={
-    name:"",
+    name:"sdfdf",
     email:"rickysakhare@gmail.com"
 }
 

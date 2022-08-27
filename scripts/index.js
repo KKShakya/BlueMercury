@@ -79,11 +79,11 @@ let data = async () => {
 
     
 
-    // display(data);
+    display(data);
 
-    // display1(data);
+    display1(data);
 
-    // display3(data)
+    display3(data)
 
   } catch (err) {
     console.log(err);
