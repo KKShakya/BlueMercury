@@ -28,7 +28,9 @@ function navbar(){
         >Sign in/up
       </li>
       <li>
+      <a href="./Cart.html">
         <span class="material-symbols-outlined"> shopping_bag </span>bag
+        </a>
       </li>
     </ul>
   </div>

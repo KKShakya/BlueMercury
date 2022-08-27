@@ -60,9 +60,14 @@
       background-color: white;
       cursor: pointer;
     }
+  /* #cartBox{
+    border: 2px solid blue;
+    height: 5px;
+  } */
 </style>
 <body>
     <div id="navbar"></div>
+    <div id="cartBox"></div>
     <div id="item-container">
     </div>
 </body>
@@ -74,8 +79,15 @@
   </script>
 <script>
 let data=JSON.parse(localStorage.getItem("items"))
-console.log(data)
+let rav=data.displayName
+let raav;
+
 appendData(data)
+
+let arr=JSON.parse(localStorage.getItem("cartData")) || []
+for(var i=0;i<arr.length;i++){
+  raav=arr[i].displayName
+}
 
 function appendData(data){
     let div=document.createElement("div")
@@ -103,6 +115,17 @@ function appendData(data){
     let button=document.createElement("button")
     button.setAttribute("id","addToBag")
     button.innerText="ADD TO BAG"
+    button.addEventListener("click",function(){
+      
+      if(rav==raav){
+        alert("Item already added in Cart")
+      }else{
+      arr.push(data)
+      localStorage.setItem("cartData",JSON.stringify(arr))
+      window.location.href="Cart.html"
+      }
+    })
+
     let incbutton=document.createElement("button")
     incbutton.innerText="+"
     incbutton.setAttribute("class","btn")
