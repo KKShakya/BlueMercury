@@ -66,7 +66,7 @@
         margin-top: 1.5em;
       }
       .home-link img {
-        width: 100%;
+        max-width: 100%;
         display: inline-block;
         margin-left: 2em;
       }
@@ -136,10 +136,11 @@
         padding-bottom: 4em;
       }
 
-      a,
+      #navbar a,
       i {
         display: inline-block;
         text-decoration: none;
+        color:#55657f
       }
 
       .ul-styling > li {
@@ -188,6 +189,87 @@
         color: #617b9b;
         text-transform: none;
       }
+
+      /* search bar csss starts here */
+      #searchBar {
+        background-color: #fff;
+        margin-top: -10px;
+      }
+
+      #searchElement {
+        width: 85%;
+        margin: auto;
+        display: block;
+        padding: 8px;
+        border: none;
+        font-size: 1.1rem;
+        visibility:hidden;
+      }
+
+      #searchElement:focus {
+        outline: none;
+      }
+
+      /* search bar container css */
+      .Search-container {
+        width: 85%;
+        margin: auto;
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: 4fr 3fr;
+        padding: 10px 25px;
+        gap: 20px;
+        visibility:hidden;
+      }
+
+      #search-left-div > p {
+        padding-bottom: 1em;
+        border-bottom: 1px solid rgb(209, 208, 208);
+      }
+
+      #search-right-div > div:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .data-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        overflow-y: scroll;
+      }
+      .data-container > div {
+        display: flex;
+        gap: 20px;
+      }
+      .data-container > div > img {
+        width: 30%;
+        border-radius: 5px;
+      }
+      .data-container > div > p {
+        text-align: center;
+        color: #12284c;
+      }
+
+      .disabled{
+        pointer-events: none;
+      }
+      
+
+      @media all and (max-width: 1000px){
+      #menu{
+        visibility:hidden;
+      }
+      .nav-link-text-key{
+        visibility:hidden;
+      }
+      .shop_links ul li{
+        gap:0px;
+      }
+    }
+
+
+
     </style>
   </head>
   <body>
@@ -196,33 +278,36 @@
       <div id="nav_link">
         <!-- locator -->
         <div id="locator">
-          <span class="material-symbols-outlined"> location_on </span>store &
-          spa locator
+          <span class="material-symbols-outlined"> location_on </span>
+          <a class="nav-link-text-key" href="">Store & Spa locator</a>
         </div>
-
+         
         <!-- logo of bluemercury -->
         <div class="logo home-link">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x.png?v=1648743182"
-            alt="logo"
-          />
+         <a href="index.html"> <img
+          src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x.png?v=1648743182"
+          alt="logo"
+        /></a>
         </div>
 
         <!-- this div contains upper rigth menus-->
         <div class="shop_links wishlist cart">
           <ul style="list-style-type: none">
             <li>
-              <span class="material-symbols-outlined"> favorite </span>Wishlist
+              <a class="material-symbols-outlined" > favorite </a>
+              <a class="nav-link-text-key">Wishlist</a>
+            </li>
+            <li class="seacrh">
+              <a class="material-symbols-outlined search"> search </a>
+              <a class="nav-link-text-key">Search</a>
             </li>
             <li>
-              <span class="material-symbols-outlined"> search </span>Search
+              <a class="material-symbols-outlined" href="./spiffy.com/signin.html"> account_circle </a>
+              <a class="nav-link-text-key" href="./spiffy.com/signin.html">SignIn/Up</a>
             </li>
             <li>
-              <span class="material-symbols-outlined"> account_circle </span
-              >Sign in/up
-            </li>
-            <li>
-              <span class="material-symbols-outlined"> shopping_bag </span>bag
+              <a class="material-symbols-outlined" href="./spiffy.com/signin.html"> shopping_bag </a>
+              <a class="nav-link-text-key" href="./spiffy.com/signin.html">Bag</a>
             </li>
           </ul>
         </div>
@@ -373,33 +458,26 @@
             <a href="#">brands</a>
             <div class="new-container shop-container">
               <div class="shop-item wd-50 mg-auto">
-                  
-                <ul
-                    class="new-list ul-styling"
-                    style="list-style-type: none"
-                  >
-                    <li><a href="#" style="color: #12284c">BEST SELLERS</a></li>
-                    <li><a href="#">Augutinus Bader</a></li>
-                    <li><a href="#">Chantecaille</a></li>
-                    <li><a href="#">diptyque</a></li>
-                    <li><a href="#">Dr.Barbara Sturm</a></li>
-                    <li><a href="#">Dyson</a></li>
-                    <li><a href="#">La Mer</a></li>
-                    <li><a href="#">Lune + Aster</a></li>
-                    <li><a href="#">M-61</a></li>
-                    <li><a href="#">NARS</a></li>
-                    <li><a href="#">Olaplex</a></li>
-                    <li><a href="#">Oribe</a></li>
-                    <li><a href="#">SkinCeuticals</a></li>
-                    <li><a href="#">Tom Ford</a></li>
-                    <li><a href="#">Trish McEvoy</a></li>
-                    <li><a href="#">VIRTUE</a></li>
-                  </ul>
+                <ul class="new-list ul-styling" style="list-style-type: none">
+                  <li><a href="#" style="color: #12284c">BEST SELLERS</a></li>
+                  <li><a href="#">Augutinus Bader</a></li>
+                  <li><a href="#">Chantecaille</a></li>
+                  <li><a href="#">diptyque</a></li>
+                  <li><a href="#">Dr.Barbara Sturm</a></li>
+                  <li><a href="#">Dyson</a></li>
+                  <li><a href="#">La Mer</a></li>
+                  <li><a href="#">Lune + Aster</a></li>
+                  <li><a href="#">M-61</a></li>
+                  <li><a href="#">NARS</a></li>
+                  <li><a href="#">Olaplex</a></li>
+                  <li><a href="#">Oribe</a></li>
+                  <li><a href="#">SkinCeuticals</a></li>
+                  <li><a href="#">Tom Ford</a></li>
+                  <li><a href="#">Trish McEvoy</a></li>
+                  <li><a href="#">VIRTUE</a></li>
+                </ul>
 
-                  <ul
-                  class="new-list ul-styling"
-                  style="list-style-type: none"
-                >
+                <ul class="new-list ul-styling" style="list-style-type: none">
                   <li><a href="#" style="color: #12284c">#NEWATBLUE</a></li>
                   <li><a href="#">BalmLabs</a></li>
                   <li><a href="#">Boculeme</a></li>
@@ -426,14 +504,13 @@
                   <h4>New to Bluemercury: EltaMD</h4>
                   <p>Shop the cult-favourite sunscreen brand</p>
                 </div>
-
-
               </div>
             </div>
           </li>
 
           <!-- Tabs under Explore b -->
-          <li><a href="#">explore</a>
+          <li>
+            <a href="#">explore</a>
             <div class="new-container shop-container">
               <div class="shop-item wd-50 mg-auto">
                 <ul class="new-list ul-styling" style="list-style-type: none">
@@ -446,7 +523,6 @@
                   <li><a href="#">Buying Guides</a></li>
                   <li><a href="#">Conscious Beauty</a></li>
                   <li><a href="#">MORE</a></li>
-
                 </ul>
                 <!-- image -->
                 <div id="image-container">
@@ -461,29 +537,32 @@
                 <div id="image-container">
                   <img
                     src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/routine-reboot_303x303.jpg?v=1659115615"
-                    alt="top rated product" onclick="routine_Reboot_page()"
+                    alt="top rated product"
+                    onclick="routine_Reboot_page()"
                   />
                   <h4>Routine Reboot</h4>
                   <p>Explore all beauty routines</p>
                 </div>
               </div>
-              </div>
+            </div>
           </li>
 
           <!-- tabs under Events -->
-          <li><a href="#">Events</a>
+          <li>
+            <a href="#">Events</a>
             <div class="new-container shop-container">
               <div class="shop-item wd-50 mg-auto">
-
                 <div id="image-container">
                   <img
                     src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/masterclass-bluemercury_303x303_8b06250d-4cc8-431d-8217-688769352c79_303x303.webp?v=1659551087"
                     alt="top rated product"
                   />
-                  <h4>Bluemercury Presents: #MasterclassBluemercury Presents: #Masterclass</h4>
+                  <h4>
+                    Bluemercury Presents: #MasterclassBluemercury Presents:
+                    #Masterclass
+                  </h4>
                   <p>Join us for live virtual shopping events!</p>
                 </div>
-
 
                 <div id="image-container">
                   <img
@@ -493,25 +572,22 @@
                   <h4>Complimentary Consultations!</h4>
                   <p>Book your one-on-one appointment at your local store</p>
                 </div>
-                </div>
-                </div>
+              </div>
+            </div>
           </li>
 
           <!-- tabs under blue Rewards -->
-          <li><a href="#">blue rewards</a>
+          <li>
+            <a href="#">blue rewards</a>
             <div class="new-container shop-container">
               <div class="shop-item wd-50 mg-auto">
-                <ul
-                  class="new-list ul-styling"
-                  style="list-style-type: none"
-                >
+                <ul class="new-list ul-styling" style="list-style-type: none">
                   <li><a href="#" style="color: #12284c">MY ACCOUNT</a></li>
                   <li><a href="#">Account Overview</a></li>
                   <li><a href="#">My Purchases</a></li>
                   <li><a href="#">My BlueRewards</a></li>
                   <li><a href="#">My Wishlist</a></li>
                   <li><a href="#">Details + Preferences</a></li>
-                 
                 </ul>
 
                 <div id="image-container">
@@ -519,45 +595,37 @@
                     src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluerewards_2_303x303.jpg?v=1635345372"
                     alt="top rated product"
                   />
-                  <h4>Earn $10 for every $250 </h4>
+                  <h4>Earn $10 for every $250</h4>
                   <p>Free to Join! Learn More ></p>
                 </div>
-               
               </div>
-                </div>
+            </div>
           </li>
 
-
           <!-- Tabs under routine reboot -->
-          <li><a href="#">routine reboot</a>
+          <li>
+            <a href="#">routine reboot</a>
             <div class="new-container shop-container">
               <div class="shop-item wd-50 mg-auto">
-                
                 <div id="image-container">
                   <img
                     src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/routine-reboot_303x303.jpg?v=1659115615"
-                    alt="top rated product" onclick="routine_Reboot_page()"
+                    alt="top rated product"
+                    onclick="routine_Reboot_page()"
                   />
-                  <h4>Shop All Routines </h4>
-                  
+                  <h4>Shop All Routines</h4>
                 </div>
-               
-               
+
                 <div id="image-container">
                   <img
                     src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/extend_your_summer_glow_2_303x303.jpg?v=1659102162"
                     alt="top rated product"
                   />
-                  <h4>The "Extend Your Summer Glow" Routine </h4>
+                  <h4>The "Extend Your Summer Glow" Routine</h4>
                   <p>Ward off dullness and boost your glow from head to toe</p>
                 </div>
-               
 
-                
-                <ul
-                  class="new-list ul-styling"
-                  style="list-style-type: none"
-                >
+                <ul class="new-list ul-styling" style="list-style-type: none">
                   <li><a href="#" style="color: #12284c">BY ROUTINE</a></li>
                   <li><a href="#">Shop All</a></li>
                   <li><a href="#">Back to School</a></li>
@@ -566,22 +634,142 @@
                   <li><a href="#">Hydration Head-to-Toe</a></li>
                   <li><a href="#">#IWokeUpLikeThis</a></li>
                   <li><a href="#">Out the Door in Five</a></li>
-                 
                 </ul>
-
-               
               </div>
-                </div>
+            </div>
           </li>
-
         </ul>
       </div>
+
+
+      <!-- ///serch bar below menu cards -->
+      <div id="searchBar">
+        <input
+          type="text"
+          placeholder="SEARCH..."
+          id="searchElement"
+          value=""
+        />
+      </div>
+      <div class="Search-container grid-col-2">
+        <div id="search-left-div">
+          <h3>Category</h3>
+          <p>Makeup</p>
+        </div>
+
+        <div id="search-right-div">
+          <div>
+            <h3>Products</h3>
+            <p>20 results</p>
+          </div>
+          <div class="data-container grid-col--2">
+            <div>
+              <img
+                src="https://cdn.shopify.com/s/files/1/0283/0185/2747/products/variant_images-color-cerise-656509031207-1.jpg?v=1660118867?v=1661583832672"
+                alt="product_image"
+              />
+              <p>name isnd djksdj sfkhjkldh fsdfsd</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
+
+
   </body>
 </html>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">    
+        </script>
 <script>
   // just for checking purpose
-  function routine_Reboot_page(){
-    window.location.href="routineReboot.html"
+  function routine_Reboot_page() {
+    window.location.href = "routineReboot.html";
   }
+
+// onclick of serach focus should be on only search
+ const searchBar = document.querySelector(".search");
+ searchBar.addEventListener("click", function(events){
+   console.log("serach");
+   $('#menu>ul>li>div').removeClass('hover');
+  })
+
+
+
+
+
+
+  const searchInput = document.getElementById("searchElement");
+  searchInput.addEventListener("keydown", function (e) {
+    // console.log(searchInput.value);
+if(e.keyCode == 13 && searchInput.value !== null)
+{
+  getSearchResults();
+
+}
+
+  });
+
+
+
+  //api cal headers and key//
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '08eba21a6dmsh6a6f06b0b841b02p1bf3a5jsn023d18fe035b',
+		'X-RapidAPI-Host': 'sephora.p.rapidapi.com'
+	}
+};
+
+
+
+  
+  
+  let getSearchResults = async () => {
+    try {
+      let query = searchInput.value;
+      let res = await fetch(`https://sephora.p.rapidapi.com/products/search?q=${query}&pageSize=20&currentPage=1`, options);
+      let data = await res.json();
+      console.log(data.products);
+      if(data !== undefined){
+        appendData(data.products);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  
+  let appendData = function (data) {
+
+    let container = document.getElementsByClassName("data-container");
+    console.log(container);
+
+    // container.innerHTML = null;
+      // console.log(data);
+
+   data.forEach((ele) => {
+   
+      
+    let div = document.createElement("div");
+    let img = document.createElement("img");
+    let Product_name = document.createElement("p");
+
+    //features
+    img.src = ele.image450;
+    Product_name.innerText = ele.productName;
+
+    div.append(img, Product_name);
+    container.append(div);
+   });
+  };
+
+
+
+
+
+
 </script>

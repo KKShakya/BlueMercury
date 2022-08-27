@@ -1,4 +1,4 @@
-function navbar(){
+async function navbar(){
   return `<div id="nav_link">
   <!-- locator -->
   <div id="locator">
@@ -381,10 +381,13 @@ function navbar(){
         </div>
           </div>
     </li>
-
-    
   </ul>
-</div>`
+</div>
+<div class="free-rewards">Free shipping for BlueRewards Members</div>
+`
 }
+
+
+
 
 export {navbar};
