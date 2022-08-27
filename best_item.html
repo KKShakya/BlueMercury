@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Details</title>
-    <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Montserrat"
-  />
-    <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-  />
+    <title>Best Items</title>
 </head>
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Montserrat"
+/>
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+/>
 <link rel="stylesheet" href="./styles/navbar.css" />
+<link rel="stylesheet" href="./styles/footer.css">
+
 <style>
-    #item-container{
+    #item-detail{
         display: flex;
         justify-content: space-around;
         margin-top: 40px;
+        height: 450px;
+        margin-bottom: 50px;
     }
     .box1{
       box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -60,73 +64,42 @@
       background-color: white;
       cursor: pointer;
     }
-  #cartBox{
-    border: 2px solid blue;
-    width: 50%;
-    margin: auto;
-    padding: 15px;
-    display: none;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  }
-  #cartBox p{
-    font-size: 20px;
-    line-height: 35px;
-  }
-  #close{
-    text-align: right;
-    margin-left: 40rem;
-    cursor: pointer;
-  }
 </style>
+
 <body>
     <div id="navbar"></div>
-    
-    <div id="cartBox">
-      <h3 id="close"><span   class="material-symbols-outlined">
-        close
-        </span></h3>
-      <h1>Shipping & Returns</h1>
-      
-      <hr>
-      <h2>Free Returns</h2>
-      <h4>Returns & Exchanges are free and accepted in store and by mail within 60 days of purchase. </h4>
-      <p>Orders placed by 3 p.m. Eastern time will be processed the same business day. Orders placed on weekends and holidays will be processed the next business day. </p>
-    </div>
-    <div id="item-container">
-    </div>
+
+    <div id="item-detail"></div>
+
+
+
+
+<!-- <button onclick="item()" > try</button> -->
+<div id="footer"></div>
 </body>
 </html>
 <script type="module">
     import {navbar} from './components/modules/navbar.js'
-    // console.log(navbar());
     document.getElementById("navbar").innerHTML = navbar();
   </script>
-  <script>
-    function shipItem(){
-    let cartbox=document.querySelector("#cartBox")
-      cartbox.style.display="block"
-}
-document.querySelector("#close").addEventListener('click',function(){
-    let giftbox=document.querySelector("#cartBox").style.display="none"
-})
-// function close(){
-//   console.log('ravi')
-//   let cartbox=document.querySelector("#cartBox")
-//       cartbox.style.display="none"
-// }
-  </script>
+<script type="module">
+    import {footer} from "./components/modules/footer.js";
+    document.getElementById("footer").innerHTML=footer()
+    </script>
+    <!-- <script src="./components/modules/navbar.js"></script> -->
+    <script src="bitem.js"></script>
 <script>
-let data=JSON.parse(localStorage.getItem("items"))
+
+let data=JSON.parse(localStorage.getItem("bestItem"))
 let rav=data.displayName
 let raav;
-
-appendData(data)
 
 let arr=JSON.parse(localStorage.getItem("cartData")) || []
 for(var i=0;i<arr.length;i++){
   raav=arr[i].displayName
 }
 
+appendData(data)
 function appendData(data){
     let div=document.createElement("div")
     div.setAttribute("class","box1")
@@ -135,10 +108,10 @@ function appendData(data){
     name.innerText=data.displayName
     name.setAttribute("id","names")
     let brandName=document.createElement("h2")
-    brandName.innerText=data.brandName
+    brandName.innerText=data.brand.displayName
     
     let image=document.createElement("img")
-    image.src=data.image450
+    image.src=data.currentSku.skuImages.image450
     let id=document.createElement("p")
     id.innerText=`ID: ${data.productId}`
     let rating=document.createElement("p")
@@ -176,7 +149,7 @@ function appendData(data){
     shipbutton.innerText="Shipping & Returns"
     shipbutton.setAttribute("id","shipbutton")
     shipbutton.addEventListener("click",function(){
-      shipItem()
+      console.log("ravi")
     })
 
 
@@ -184,7 +157,39 @@ function appendData(data){
     button.append(span)
     div.append(image)
     div1.append(brandName,name,id,rating,review,price,button,incbutton,itemAmount,desbutton,shipbutton)
-    document.querySelector("#item-container").append(div,div1)
+    document.querySelector("#item-detail").append(div,div1)
 
 }
+
+</script>
+<script>
+let blip=async()=>{
+    url=`https://sephora.p.rapidapi.com/products/detail?productId=P236816&preferedSku=2210607`
+    let res=await fetch(url,{
+        method:'GET',
+        headers: {
+            'Content-Type':'application/json',
+            'X-RapidAPI-Key': '2d3a7e5e94msh2293d946fc77747p1a6907jsn481aaf792503',
+             'X-RapidAPI-Host': 'sephora.p.rapidapi.com'
+         }
+    });
+    let datav=await res.json()
+    localStorage.setItem("bestItem",JSON.stringify(datav))  
+    window.location.href="./best_item.html"
+}
+let bitem1=async()=>{
+    url=`https://sephora.p.rapidapi.com/products/detail?productId=P500307&preferedSku=2210607`
+    let res=await fetch(url,{
+        method:'GET',
+        headers: {
+            'Content-Type':'application/json',
+            'X-RapidAPI-Key': '2d3a7e5e94msh2293d946fc77747p1a6907jsn481aaf792503',
+             'X-RapidAPI-Host': 'sephora.p.rapidapi.com'
+         }
+    });
+    let datav=await res.json()
+    localStorage.setItem("bestItem",JSON.stringify(datav))  
+    window.location.href="./best_item.html"
+}
+
 </script>

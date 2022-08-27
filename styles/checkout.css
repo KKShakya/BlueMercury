@@ -3,16 +3,21 @@ body {
   font-family: sans-serif;
 }
 
-#main {
+/* #main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 100rem;
   text-align: center;
+} */
+#box1{
+  width: 50%;
+  margin: auto;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  padding: 10px 0px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
-#main > div {
-  border: 1px solid green;
-}
 
 #breadcrumb {
   display: inline;

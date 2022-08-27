@@ -15,10 +15,13 @@
   />
 </head>
 <link rel="stylesheet" href="./styles/navbar.css" />
+<link rel="stylesheet" href="./styles/footer.css">
 <style>
     .heading1{
         margin: 90px;
         font-family: "Roboto", "Montserrat", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        letter-spacing: 3px;
+        color: rgb(35, 35, 63);
     }
     table{
         width: 100%;
@@ -65,12 +68,17 @@
     }
     .cart-box>h1{
         text-align: right;
+        /* border: 2px solid blue; */
     }
     .cart-box>button{
         padding: 7px;
         margin-left: 60rem;
         width: 25rem;
         font-size: 25px;
+        margin-bottom: 50px;
+        cursor: pointer;
+        background-color: #111154;
+        border: 2px solid #111154;
     }
     #gift-box{
         width: 80%;
@@ -113,14 +121,19 @@
 
     <h1>Total:-$<span>0</span></h1>
     <p style="text-align: right;">Shipping,Taxes,Beauty Cards and additional discounts applied at checkout</p>
-    <button>Checkout</button>
+     <button><a style="color: white" href="checkout.html">CHECKOUT</button></a> 
 </div>
+<div id="footer"></div>
 </body>
 </html>
 <script type="module">
     import {navbar} from './components/modules/navbar.js'
     document.getElementById("navbar").innerHTML = navbar();
   </script>
+<script type="module">
+    import {footer} from "./components/modules/footer.js";
+    document.getElementById("footer").innerHTML=footer()
+    </script>
   <script>
 
 
@@ -211,3 +224,4 @@ function removes(index){
     window.location.reload(true)
 }
   </script>
+  

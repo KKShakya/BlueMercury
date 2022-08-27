@@ -16,19 +16,22 @@
 </head>
 <link rel="stylesheet" href="./styles/navbar.css" />
 <link rel="stylesheet" href="./styles/newArrivels.css">
+<link rel="stylesheet" href="./styles/footer.css">
 <body onload="main()">
     <div id="navbar"></div>
     <div id="main">
+        
 <div class="box1">
+    <p>Home> <span></span></p>
     <h4 style="margin-bottom: -20px; margin-top: 26px;">NEW ARRIVALS CATEGORY</h4>
-    <h6>Select one to narrow results</h6>
+    <h6 style="margin-bottom: 0px">Select one to narrow results</h6>
     <hr>
     <ul type="none">
         <li onclick="bath()" id="bath" value="2">Bath & Body</li>
-        <li>Fragrance</li>
-        <li>Hair Care</li>
-        <li>Makeup</li>
-        <li>Skin Care</li>
+        <li onclick="Fragrance()">Fragrance</li>
+        <li onclick="Hair()" >Hair Care</li>
+        <!-- <li>Makeup</li> -->
+        <li onclick="Skin()">Skin Care</li>
     </ul>
      <h3>Filter New Arrivels By</h3>
      <select name="Type" id="type">
@@ -79,7 +82,7 @@
 </div>
 <div class="box2">
     <div>
-    <h1 style="font-weight: lighter;">NEW ARRIVALS</h1>
+    <h1 id="box2-heading" style="font-weight: lighter;"></h1>
     <select name="Fetaured" id="sort">
         <option value="featured">Featured</option>
         <option value="Ascending">Ascending</option>
@@ -89,18 +92,14 @@
     </select>
 </div>
 <hr>
-
-
 <div class="items_count">
-    <p>0 filters applied</p>
+    <p id="box2-heading2"></p>
     <p class="result"><span> </span> results</p>
 </div>
 <div id="products"></div>
 </div>
-
-<!-- <button onclick="main()">try</button> -->
-
     </div>
+    <div id="footer"></div>
 </body>
 </html>
 <script type="module">
@@ -109,3 +108,4 @@
     document.getElementById("navbar").innerHTML = navbar();
   </script>
   <script src="./scripts/New_arrivel.js"></script>
+<!-- <script src="./"></script> -->

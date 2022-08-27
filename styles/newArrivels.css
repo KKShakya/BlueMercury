@@ -36,6 +36,7 @@
     border-bottom: none;
     font-weight: lighter;
     font-family: "Roboto", "Montserrat", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    padding-top: 17px;
 }
 .box2>div{
     display: flex;
