@@ -5,40 +5,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Arrivels</title>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
 </head>
+<link rel="stylesheet" href="./styles/navbar.css" />
 <link rel="stylesheet" href="./styles/newArrivels.css">
-<body>
+<body onload="main()">
+    <div id="navbar"></div>
     <div id="main">
 <div class="box1">
-    <h5>NEW ARRIVALS CATEGORY</h5>
-    <p>Select one to narrow results</p>
+    <h4 style="margin-bottom: -20px; margin-top: 26px;">NEW ARRIVALS CATEGORY</h4>
+    <h6>Select one to narrow results</h6>
     <hr>
-    <p>Bath & Body</p>
-     <p>Fragrance</p>
-     <p>Hair Care</p>
-     <p>Makeup</p>
-     <p>Skin care</p>
+    <ul type="none">
+        <li onclick="bath()" id="bath" value="2">Bath & Body</li>
+        <li>Fragrance</li>
+        <li>Hair Care</li>
+        <li>Makeup</li>
+        <li>Skin Care</li>
+    </ul>
      <h3>Filter New Arrivels By</h3>
+     <select name="Type" id="type">
+        <option value="">Types</option>
+        <option value="">Bar Soaps</option>
+        <option value="">Bath And Body Sets</option>
+        <option value="">Bath Salts</option>
+        <option value="">Blush</option>
+        <option value="">Body Creams</option>
+        <option value="">Body Oils</option>
+     </select>
+     <select name="Type" id="type">
+        <option value="">Brand</option>
+        <option value="">Bar Soaps</option>
+        <option value="">Bath And Body Sets</option>
+        <option value="">Bath Salts</option>
+        <option value="">Blush</option>
+        <option value="">Body Creams</option>
+        <option value="">Body Oils</option>
+     </select>
+     <select name="Type" id="type">
+        <option value="">Benfits</option>
+        <option value="">Bar Soaps</option>
+        <option value="">Bath And Body Sets</option>
+        <option value="">Bath Salts</option>
+        <option value="">Blush</option>
+        <option value="">Body Creams</option>
+        <option value="">Body Oils</option>
+     </select>
+     <select name="Type" id="type">
+        <option value="">Concern</option>
+        <option value="">Bar Soaps</option>
+        <option value="">Bath And Body Sets</option>
+        <option value="">Bath Salts</option>
+        <option value="">Blush</option>
+        <option value="">Body Creams</option>
+        <option value="">Body Oils</option>
+     </select>
+     <select name="Type" id="type">
+        <option value="">Size</option>
+        <option value="">Bar Soaps</option>
+        <option value="">Bath And Body Sets</option>
+        <option value="">Bath Salts</option>
+        <option value="">Blush</option>
+        <option value="">Body Creams</option>
+        <option value="">Body Oils</option>
+     </select>
 </div>
 <div class="box2">
     <div>
-    <h1>NEW ARRIVALS</h1>
-    <select name="Fetaured" id="Featured">
-        <option value="">Featured</option>
-        <option value="newArivels">New Arrivels</option>
-        <option value="bestSeller">Best Sellers</option>
-        <option value="lowToHigh">Price Low to High</option>
-        <option value="highToLow">Price High to Low</option>
+    <h1 style="font-weight: lighter;">NEW ARRIVALS</h1>
+    <select name="Fetaured" id="sort">
+        <option value="featured">Featured</option>
+        <option value="Ascending">Ascending</option>
+        <option value="Descending">Descending</option>
+        <option value="LTH">Price Low to High</option>
+        <option value="HTL">Price High to Low</option>
     </select>
 </div>
-<div id="products">
+<hr>
 
+
+<div class="items_count">
+    <p>0 filters applied</p>
+    <p class="result"><span> </span> results</p>
 </div>
+<div id="products"></div>
 </div>
 
-<button onclick="main()">try</button>
+<!-- <button onclick="main()">try</button> -->
 
     </div>
 </body>
 </html>
-<script src="./scripts/New_arrivel.js"></script>
+<script type="module">
+    import {navbar} from './components/modules/navbar.js'
+    // console.log(navbar());
+    document.getElementById("navbar").innerHTML = navbar();
+  </script>
+  <script src="./scripts/New_arrivel.js"></script>

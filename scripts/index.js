@@ -13,6 +13,12 @@ let arr2 = [
   `<h2>Lune+Aster</h2><h1>Dusk + Shadows</h1><p> This new palette features five universal, sunset-inspired shades in matte and shimmer finishes, so you can easily create an alluring eye look!</p><a href="/products/lune-aster-sunset-eyeshadow-palette">Shop Now</a>`,
 ];
 
+let arr3 = [
+  `Free Shipping for BlueRewards Members`,
+  `Free Gifts with Purchase. Browse Now `,
+  `Free Samples with All Orders`
+]
+
 let i = 0;
 
 function radio1() {
@@ -28,6 +34,12 @@ function radio3() {
 }
 
 function slideshow() {
+
+
+
+  document.querySelector("#slide_text").innerHTML=arr3[i]
+
+
   let x = document.getElementById("slide_link");
   
  let k = arr[i];
@@ -38,9 +50,10 @@ function slideshow() {
   document.querySelector("#slide_line_text").innerHTML = k1;
 
   x.style.backgroundRepeat = "no-repeat";
-  x.style.backgroundSize = "contain";
+  x.style.backgroundSize = "cover";
 
-  x.style.height = "35rem";
+ 
+  x.style.marginTop = "0rem"
   x.style.width = "100%";
 
   if (i < arr.length - 1) {
@@ -64,11 +77,14 @@ let data = async () => {
 
     let data = await res.json();
 
-    console.log(data);
+    
 
     display(data);
 
     display1(data);
+
+    display3(data)
+
   } catch (err) {
     console.log(err);
   }
@@ -91,33 +107,15 @@ function display(arr) {
     let p1 = document.createElement("p");
     p1.innerText = arr[i].name;
     let p2 = document.createElement("p");
-    p2.innerText = arr[i].price;
+    p2.innerText = `$ ${arr[i].price}`;
 
     div.append(img, p, p1, p2);
 
     document.querySelector("#slide_p1").append(div);
 
-    console.log(div);
+  
   }
 }
-
-let data1 = async () => {
-  try {
-    let res = await fetch(
-      "http://makeup-api.herokuapp.com/api/v1/products.json"
-    );
-
-    let data = await res.json();
-
-    console.log(data, "udsfhuhf");
-
-    display1(data);
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-data1();
 
 function display1(arr) {
   for (let i = 70; i <= 90; i++) {
@@ -134,12 +132,41 @@ function display1(arr) {
     let p1 = document.createElement("p");
     p1.innerText = arr[i].name;
     let p2 = document.createElement("p");
-    p2.innerText = arr[i].price;
+    p2.innerText =`$ ${arr[i].price}`;
 
     div.append(img, p, p1, p2);
 
     document.querySelector("#slide_p2").append(div);
 
-    console.log(div);
+    
   }
 }
+
+
+function display3(arr) {
+  for (let i = 100; i <= 120; i++) {
+    let div = document.createElement("div");
+
+    let img = document.createElement("img");
+
+    let x = arr[i].api_featured_image;
+
+    img.src = `https:${x}`;
+
+    let p = document.createElement("p");
+    p.innerText = arr[i].brand;
+    let p1 = document.createElement("p");
+    p1.innerText = arr[i].name;
+    let p2 = document.createElement("p");
+    p2.innerText = `$ ${arr[i].price}`;
+
+    div.append(img, p, p1, p2);
+
+    document.querySelector("#slide_p3").append(div);
+
+
+  }
+}
+
+
+  

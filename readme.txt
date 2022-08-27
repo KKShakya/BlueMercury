@@ -30,6 +30,18 @@ this might further cause problems and multiple corrections; so refrain yourself 
 
  3 Don't pull and merge on your own assign this work to your team lead.
 
- 4. Try to update your work  before the daily deadlines.
+ 4. Try to update your work with before the daily deadlines.
 
  5. Mention proper comments to your pull request otherwise the code will look like a Alien language to your reviewer.
+
+*****************************************************************************************
+
+ Manish fw19_0878 -V-
+ 
+ 
+ day       issues      task
+ day-1     1            2
+ day-2     1            2
+ day-3     1            6
+ day-4     1            1
+ day-5     1            1

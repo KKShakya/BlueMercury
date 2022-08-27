@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+  />
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+</head>
+<link rel="stylesheet" href="./styles/navbar.css" />
+<style>
+    .heading1{
+        margin: 90px;
+        font-family: "Roboto", "Montserrat", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    }
+    table{
+        width: 100%;
+        font-size: 25px;
+        margin-top: 3rem;
+        font-family: "Roboto", "Montserrat", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        border-collapse: collapse;
+        /* border: 2px solid red; */
+    }
+    table tr{
+        border-bottom: 2px solid rgb(166 166 166);
+    }
+    table tr td{
+        /* border: 2px solid green; */
+        text-align: center;
+        padding-top: 10px;
+    }
+    .thead1{
+        text-align: left;
+        padding-bottom: 15px;
+    }
+    #td3 div{
+      display: flex;
+      justify-content: center;
+    }
+    #td3 div button{
+        font-size: 20px;
+        cursor: pointer;
+        padding: 10px;
+        margin: 25px 10px 25px 5px;
+    }
+    #td3>button{
+        padding: 10px;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        border-bottom: 2px solid black;
+        font-size: 20px;
+    }
+    .cart-box{
+        width: 90%;
+        margin: auto;
+        font-family: "Roboto", "Montserrat", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    }
+    .cart-box>h1{
+        text-align: right;
+    }
+    .cart-box>button{
+        padding: 7px;
+        margin-left: 60rem;
+        width: 25rem;
+        font-size: 25px;
+    }
+    #gift-box{
+        width: 80%;
+        margin: auto;
+        display: none;
+        z-index: 9;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+</style>
+<body>
+    <div id="navbar"></div>
+    <h1 class="heading1">YOUR BAG</h1>
+    <div class="cart-box">
+    <h2>Your Cart (<span></span> item )</h2>
+    <input onclick="checkbox()" style="height: 20px;width: 40px;" type="checkbox" id="checkbox">
+    <p style="display: inline; font-weight: bold;">IS THIS ORDER A GIFT</p>
+    <p>The price of your order will be hidden on the gift receipt.</p>
+    
+        <div id="gift-box">
+            <h3 id="close" style="text-align: right;cursor: pointer;"><span  class="material-symbols-outlined">
+                close
+                </span></h3>
+            <h2>Gift Box this order</h2>
+            <p>This will appear as an item in your cart. We will select a box size to best accommodate your order. If the entire order will not fit within the Gift Box, the remaining items will receive standard packaging. While gift orders can be returned, the gift boxing fee is non-refundable.</p>
+            <h2>Ship Directly to Recipient</h2>
+            <p>Prices will be omitted you will be directed to input the recipient’s information during checkout. We will not use their information to contact them in advance. So don’t worry, we won’t spill the beans if you’re planning a surprise!</p>
+
+        </div>
+    <table>
+        <thead id="table">
+            <tr>
+            <th class="thead1">Ready to ship</th>
+            <th>Price</th>
+            <th>Quantinty</th>
+            <th>Total</th>
+            </tr>
+        </thead>   
+    </table>
+
+    <h1>Total:-$<span>0</span></h1>
+    <p style="text-align: right;">Shipping,Taxes,Beauty Cards and additional discounts applied at checkout</p>
+    <button>Checkout</button>
+</div>
+</body>
+</html>
+<script type="module">
+    import {navbar} from './components/modules/navbar.js'
+    document.getElementById("navbar").innerHTML = navbar();
+  </script>
+  <script>
+
+
+document.querySelector("#close").addEventListener('click',function(){
+    let giftbox=document.querySelector("#gift-box").style.display="none"
+})
+
+function checkbox(){
+    let checkbox=document.querySelector("#checkbox")
+    let giftbox=document.querySelector("#gift-box")
+
+    if(checkbox.checked==true){
+        giftbox.style.display="block"
+    }else{
+        giftbox.style.display="none"
+    }
+}
+
+
+let data=JSON.parse(localStorage.getItem("cartData")) || []
+itemsNo=0;
+let sum=0;
+// let count=1;
+console.log(data)
+
+data.forEach((elem,index)=>{
+    itemsNo++
+    let tr=document.createElement('tr')
+    let td1=document.createElement("td")
+    td1.setAttribute("id","td1")
+    let image=document.createElement("img")
+    image.src=elem.heroImage
+    let name=document.createElement("p")
+    name.innerText=elem.displayName
+    let td2=document.createElement("td")
+    td2.innerText=elem.currentSku.listPrice
+    let remove=document.createElement("button")
+    remove.innerText="Remove"
+    remove.addEventListener("click",function(){
+        removes(index)
+    })
+    let td3=document.createElement("td")
+    td3.setAttribute("id","td3")
+    let div=document.createElement("div")
+    let incbutton=document.createElement("button")
+    incbutton.addEventListener("click",function(){
+        itemAmount.innerText=Number(itemAmount.innerText)+1
+        td4.innerText=Number(prices)*Number(itemAmount.innerText)
+        sum+=Number(prices)
+        subtotal.innerText=sum
+    })
+    incbutton.innerText="+"
+    incbutton.setAttribute("class","btn")
+    let desbutton=document.createElement("button")
+    desbutton.addEventListener("click",function(){
+        if(Number(itemAmount.innerText<=1)){
+        alert("Item can't be Zero")
+    }else{
+        itemAmount.innerText=Number(itemAmount.innerText)-1
+        td4.innerText=td4.innerText-Number(prices)
+        subtotal.innerText=Number(subtotal.innerText)-Number(prices)
+    }
+    })
+    desbutton.innerText="-"
+    desbutton.setAttribute("class","btn")
+    let itemAmount=document.createElement("h3")
+    itemAmount.innerText=1;
+    let td4=document.createElement("td")
+    let prices=elem.currentSku.listPrice.substring(1)
+    td4.innerText="$"+prices
+    
+    let subtotal=document.querySelector(".cart-box>h1>span")
+    sum=sum+Number(prices)
+    document.querySelector(".cart-box>h2>span").innerText=itemsNo
+    subtotal.innerText=sum
+    td1.append(image,name)
+    div.append(incbutton,itemAmount,desbutton)
+    td3.append(div,remove)
+    tr.append(td1,td2,td3,td4)
+    document.querySelector("#table").append(tr)
+})
+
+
+function removes(index){
+    console.log(index)
+    data.splice(index,1)
+    localStorage.setItem("cartData",JSON.stringify(data))
+    window.location.reload(true)
+}
+  </script>
