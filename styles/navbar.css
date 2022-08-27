@@ -118,11 +118,7 @@ i {
   text-decoration: none;
 }
 
-.ul-styling > li {
-  display: flex;
-  gap: 3em;
-  color: #617b9b;
-  margin-bottom: -3.5em;
+
 }
 
 /* right part of border designing having twolist and image */
