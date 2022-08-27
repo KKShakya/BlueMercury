@@ -1,15 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Routine Reboot</title>
-</head>
-<body>
-  <section>k</section>
-  <section>k</section>
-  <section>k</section>
-  <section>k</section>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Routine Reboot</title>
+    <!-- font family from google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <!-- icon family from google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      #main {
+        max-width: 100%;
+        margin: auto;
+        background-color: #fbf8ee;
+        padding-bottom: 4em;
+      }
+      .image-text,
+      .innerText {
+        width: 35%;
+        margin: auto;
+        text-align: center;
+        margin-top: 4rem;
+        font-size: 1.2rem;
+        color: #55657f;
+        line-height: 1.8rem;
+        margin-bottom: 5em;
+      }
+      .image-text > img {
+        width: 100%;
+      }
+      .img-2 {
+        width: 50%;
+        margin: auto;
+        margin-bottom: 2em;
+      }
+
+      .img-3 {
+        width: 95%;
+        margin: auto;
+        margin-bottom: 2em;
+      }
+      .innerText > p > u,
+      .section-2-inner > p > u {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: #12284c;
+      }
+
+      .section-2 {
+        width: 95%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px;
+        background-color: #fff;
+        gap: 15px;
+      }
+      .section_2_img {
+        text-align: center;
+        margin: auto;
+        padding-top: 1em;
+        background: #e2d7c6;
+        background: linear-gradient(to right, #fffbf5, #dcd2be);
+      }
+      .section_2_img > img:first-child {
+        width: 50%;
+        margin-bottom: -3.8px;
+      }
+      .section_2_img > img:nth-child(2) {
+        width: 100%;
+        /* visibility:hidden */
+      }
+      .section-2-inner {
+        width: 90%;
+        margin: auto;
+        font-size: 1.2rem;
+        color: #55657f;
+        line-height: 1.2rem;
+      }
+
+      .right-div > img:first-child {
+        width: 45%;
+      }
+      .section-3 {
+        margin-top: 4em;
+      }
+
+      #chat-bot-sign {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        vertical-align: middle;
+      }
+
+      #chat-bot-sign img {
+        width: 20px;
+        height: 20px;
+      }
+      #chat-bot-sign > button {
+        background: #424fb5;
+        border: 0;
+        padding: 10px 20px;
+        font-size: 1.3rem;
+        border-radius: 999rem;
+      }
+      #chat-bot-sign > button > span:last-child {
+        color: #fff;
+      }
+      #chat-bot-sign > button:hover,
+      .chat-header-cont > button:hover {
+        background: #3a73b2;
+        box-shadow: 0 14px 28px rgba(2, 2, 3, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+        transform: scale(0.9);
+      }
+
+      .chat-box-window {
+        width: 20%;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: none;
+        background-color: #fff;
+      }
+      .chat-header {
+        height: 40px;
+        margin-top: -10px;
+        background-color: #3a73b2;
+        border-radius: 10px 10px 0 0;
+      }
+      .chat-header-cont > h1 {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: normal;
+        padding-top: 10px;
+        color: #fff;
+      }
+      
+
+      .chat-box-window > form {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        line-height: 1.2;
+        overflow-y: hidden;
+      }
+
+      .chat-box-window > form > p {
+        font-size: 0.9rem;
+        color: #5a6b7b;
+      }
+      .chat-box-window > form > label {
+        margin-top: 10px;
+        font-weight: 500;
+      }
+      .sbmt-msg {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      .sbmt-msg > button {
+        background-color: #3a73b2;
+        border: 0;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        color: #fff;
+        /* margin-right: 25px; */
+      }
+      .sbmt-msg > button:hover {
+        transform: scale(0.9);
+      }
+
+      @media all and (max-width: 810px) {
+        .section-2 {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div id="main">
+
+      <section class="upper-section section-1">
+        <!-- The upper part of the section-1 -->
+        <div class="image-text">
+          <img
+            src="./components/images/routineRebootTextimg-1.png"
+            alt="text"
+          />
+          <p>
+            We all have our own ways of doing things. Which is great! But
+            “getting into a groove” isn’t that far from “falling into a rut.”
+            Could be it’s time for a rethink regarding the products you always
+            reach for. As well as a chance to dream up totally new strategies
+            for tackling whatever the day brings.
+          </p>
+          <p>
+            Let us help ensure you’re getting the most out of every single one
+            of your uniquely you routines. We’ve compiled some of our favorite
+            plans here, but you can also visit
+            <a href="#"><u>your local store</u></a> and work with a Beauty
+            Expert to craft your own personalized programs.
+          </p>
+        </div>
+
+        <!-- The extended glow image -->
+        <div class="image-text img-2">
+          <img src="./components/images/routineReboot_img-2.png" alt="text" />
+        </div>
+
+        <!-- The first products aligned image -->
+        <div class="image-text img-3">
+          <img src="./components/images/products-image_img-3.png" alt="text" />
+
+          <div class="innerText">
+            <p>
+              Keep the summer vibes going well through autumn with strategic
+              beauty product selection. This five-part plan will ward off
+              dullness and boost your glow from head to toe.
+            </p>
+            <p><u>shop the routine</u></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-part section-2 bg-wh p-20">
+        <div class="section_2_img left-div">
+          <img src="./components/images/section-2_left-div.png" alt="text" />
+          <img src="./components/images/left-divimg-2.png" alt="img" />
+          <div class="section-2-inner">
+            <p>
+              When hair and skin are parched, it causes short-term discomfort
+              <em>and</em> lasting damage. This regimen restores softness to
+              strands while saturating skin with moisture.
+            </p>
+            <p><u>shop the routine</u></p>
+          </div>
+        </div>
+
+        <div class="section_2_img right-div">
+          <img src="./components/images/section-2_right_div.png" alt="text" />
+          <img
+            src="./components/images/section-2_right_div_img-2.png"
+            alt="img"
+          />
+          <div class="section-2-inner">
+            <p>
+              While you may have room at home, cramped dorm living means
+              curating your beauty musts. From skin clarifiers to life
+              simplifiers, every item here is worthy of the dean’s list.
+            </p>
+            <p><u>shop the routine</u></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-3">
+        <div class="image-text img-2">
+          <img src="./components/images/section_3_getRid_img.png" alt="text" />
+        </div>
+
+        <!-- The first products aligned image -->
+        <div class="image-text img-3">
+          <img src="./components/images/section-3 img-2.png" alt="text" />
+
+          <div class="innerText">
+            <p>
+              If you spent the season soaking up the sun’s rays, your skin will
+              need extra TLC to look its best this fall. Rehab your complexion
+              using this reparative regimen.
+            </p>
+            <p><u>shop the routine</u></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- section-4 -->
+      <section class="grid-part section-2 bg-wh p-20">
+        <div class="section_2_img left-div">
+          <img src="./components/images/section-4 img-1.png" alt="text" />
+          <img src="./components/images/section-4img-2.png" alt="img" />
+          <div class="section-2-inner section-4">
+            <p>
+              Proper pre-bed beauty prep will not only help you rest easy, but
+              also simplify your AM routine. With just a few advance steps,
+              you’ll hop out of bed looking bright-eyed, radiant and ready to
+              go.
+            </p>
+            <p><u>shop the routine</u></p>
+          </div>
+        </div>
+
+        <div class="section_2_img right-div">
+          <img
+            src="./components/images/section-4_right-div_img-2.png"
+            alt="text"
+          />
+          <img
+            src="./components/images/section-4_right-div_img-3.png"
+            alt="img"
+          />
+          <div class="section-2-inner section-4">
+            <p>
+              Whether you’re late for your leadership meeting or need to hustle
+              to hockey practice, this speedy, six-step regimen makes it easy to
+              get gorgeous and get going.
+            </p>
+            <p><u>shop the routine</u></p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="chat-bot-sign">
+      <button>
+        <span
+          ><img
+            src="https://png.pngtree.com/png-vector/20190225/ourmid/pngtree-vector-chat-icon-png-image_702381.jpg"
+            alt=""
+          />
+          Chat</span
+        >
+      </button>
+    </div>
+
+    <div class="chat-box-window">
+      <div class="chat-header">
+        <div class="chat-header-cont">
+          <h1>Chat with us</h1>
+        </div>
+      </div>
+
+      <form action="">
+        <p>
+          You will be connected with one of our lovely support agents as soon as
+          you fill out the form below!
+        </p>
+        <label for="">Name</label>
+        <input type="text" required />
+        <label for="">Email</label>
+        <input type="text" required />
+        <label for="">Message</label>
+        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+      </form>
+      <div class="sbmt-msg">
+        <button>Submit</button>
+      </div>
+    </div>
+    <footer>krishna</footer>
+  </body>
 </html>
+
+<script type="module">
+  import { navbar } from "./components/modules/navbar.js";
+  console.log(navbar());
+  document.getElementById("navbar").innerHTML = await navbar();
+</script>
+
+<script>
+
+let chat_btn = document.querySelector("#chat-bot-sign");
+let chat_wind = document.querySelector(".chat-box-window");
+let chat_sbmt = document.querySelector(".sbmt-msg>button");
+let chat_close = document.querySelector(".chat-header-cont>button");
+
+chat_btn.addEventListener("click",function(e){
+  chat_btn.style.display = "none";
+  chat_wind.style.display = "block";
+})
+
+chat_sbmt.addEventListener("click",function(e){
+  chat_btn.style.display = "inline";
+  chat_wind.style.display = "none";
+})
+
+chat_close.addEventListener("click",function(e){
+  chat_btn.style.display = "inline";
+  chat_wind.style.display = "none";
+})
+</script>
