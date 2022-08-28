@@ -9,9 +9,12 @@ let register = ()=>{
         mobile : document.getElementById('mobile').value,
         description : document.getElementById('description').value
     }
+// console.log(register_data);
 
    Data.push(register_data)
-   localStorage.setItem("user",JSON.stringify(Data))
+//    console.log("data",Data);
+
+   localStorage.setItem("user",JSON.stringify(Data));
    alert ("You account has been created")
    window.location.href = "signin.html"
 }

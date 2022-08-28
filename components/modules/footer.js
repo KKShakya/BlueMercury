@@ -43,7 +43,7 @@ async function footer(){
   
   <div >
     <h3>MY ACCOUNT</h3> 
-   <a href=""> <p>My Account</p> </a> 
+   <a href="../account.html"> <p>My Account</p> </a> 
    <a href=""> <p>BlueRewards</p> </a>
    <a href=""> <p>Gift Card Balance Checker</p> </a> 
     

@@ -3,10 +3,20 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+section{
+    width:100%;
+    margin:auto;
+    padding:2em 10em;
+display:grid;
+grid-template-columns: 2fr 3fr;
+}
+
 #container{
-    width: 22%;
-    border:1px solid black;
-    position: absolute;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding:20px;
+    padding-right:0px;
+    border-radius: 8px;
 }
 #container>button{
 width: 85%;
@@ -14,23 +24,25 @@ display: block;
 padding: 10px;
 }
 #container>button:hover{
-    width: 100%;
-    background-color: rgb(0, 69, 130);
-    border: none;
+    background-color: rgb(92, 144, 189);
     color: #fff;
+    transform: scale(0.9);
 }
 #user_id{
-    display:flex;    
-    gap: 20em;
-
+    /* display:flex;     */
+text-align: center;
 }
-img{
+#user_id img{
     border-radius: 50%;
-    width: 50px;
+    width: 30%;
 }
 #user_id>div{
     display: block;
 }
 #user_id>div>a{
     margin-top: -20px;
+}
+
+#navbar+h1{
+text-align:center
 }

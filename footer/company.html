@@ -161,7 +161,7 @@
     </head>
     <body>
 
-        <div id="navbar1"></div>
+        <div id="navbar"></div>
     
         <div id="header">
             <h1>Our Company</h1>       
@@ -231,9 +231,9 @@
 
         import { navbar } from "../components/modules/navbar.js" 
         
-        let container1 = document.getElementById("navbar1");
+        let container1 = document.getElementById("navbar");
         
-        container1.innerHTML = navbar();
+        container1.innerHTML = await navbar();
         
         </script>
         
@@ -243,7 +243,7 @@
           
           let container2 = document.getElementById("footer1");
           
-          container2.innerHTML = footer();
+          container2.innerHTML = await footer();
           
           </script>
         

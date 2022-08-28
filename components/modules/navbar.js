@@ -31,7 +31,7 @@ async function navbar(){
       </li>
       <li>
         <a class="material-symbols-outlined" href="./cart.html"> shopping_bag </a>
-        <a class="nav-link-text-key" href="./cart.html">Bag</a>
+        <span class="nav-link-text-key" onclick="permission1()" >Bag</span>
       </li>
     </ul>
   </div>
