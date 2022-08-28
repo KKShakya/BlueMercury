@@ -80,13 +80,12 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
 </html>
 <script type="module">
     import {navbar} from './components/modules/navbar.js'
-    document.getElementById("navbar").innerHTML = navbar();
+    document.getElementById("navbar").innerHTML = await navbar();
   </script>
 <script type="module">
     import {footer} from "./components/modules/footer.js";
-    document.getElementById("footer").innerHTML=footer()
+    document.getElementById("footer").innerHTML= await footer()
     </script>
-    <!-- <script src="./components/modules/navbar.js"></script> -->
     <script src="bitem.js"></script>
 <script>
 
@@ -136,15 +135,6 @@ function appendData(data){
       window.location.href="Cart.html"
       }
     })
-
-    let incbutton=document.createElement("button")
-    incbutton.innerText="+"
-    incbutton.setAttribute("class","btn")
-    let desbutton=document.createElement("button")
-    desbutton.innerText="-"
-    desbutton.setAttribute("class","btn")
-    let itemAmount=document.createElement("h3")
-    itemAmount.innerText=1
     let shipbutton=document.createElement("button")
     shipbutton.innerText="Shipping & Returns"
     shipbutton.setAttribute("id","shipbutton")
@@ -156,7 +146,7 @@ function appendData(data){
     
     button.append(span)
     div.append(image)
-    div1.append(brandName,name,id,rating,review,price,button,incbutton,itemAmount,desbutton,shipbutton)
+    div1.append(brandName,name,id,rating,review,price,button,shipbutton)
     document.querySelector("#item-detail").append(div,div1)
 
 }
@@ -190,6 +180,9 @@ let bitem1=async()=>{
     let datav=await res.json()
     localStorage.setItem("bestItem",JSON.stringify(datav))  
     window.location.href="./best_item.html"
+}
+function homebtn(){
+    window.location.href="./index.html"
 }
 
 </script>

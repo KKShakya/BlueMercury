@@ -39,9 +39,10 @@ let Fragrance=async()=>{
     appendData(datas)   
 }
 
+
 // Category 3
 let Hair=async()=>{
-    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=20&currentPage=4`
+    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=19&currentPage=4`
     let res=await fetch(url,{
         method:'GET',
         headers: {
@@ -55,11 +56,12 @@ let Hair=async()=>{
     document.querySelector(".box1>p>span").innerText="HAIR CARE"
     document.querySelector("#box2-heading").innerText="HAIR CARE"
     document.querySelector("#box2-heading2").innerText="These items are specially designed for hairs like straightner and waxes."
+    // localStorage.setItem("sitem",JSON.stringify(datas))
     appendData(datas)   
 }
 //category 4
 let Skins=async()=>{
-    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=20&currentPage=5`
+    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=17&currentPage=5`
     let res=await fetch(url,{
         method:'GET',
         headers: {
@@ -74,11 +76,12 @@ let Skins=async()=>{
     let data=await res.json()
     let datas=data.products
     appendData(datas)   
+    // window.location.href="../New_arrivel.html"
 }
 
 //Category 5
 let Makeup=async()=>{
-    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=20&currentPage=6`
+    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=22&currentPage=6`
     let res=await fetch(url,{
         method:'GET',
         headers: {
@@ -101,7 +104,7 @@ let main=async()=>{
     document.querySelector(".box1>p>span").innerText="NEW ARRIVELS"
     document.querySelector("#box2-heading").innerText="NEW ARRIVELS"
     document.querySelector("#box2-heading2").innerText="These items are newly introduced items of our company."
-    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=20&currentPage=${page}`
+    url=`https://sephora.p.rapidapi.com/products/list?categoryId=cat150006&pageSize=50&currentPage=${page}`
     
 let res=await fetch(url,{
     method:'GET',
@@ -160,16 +163,17 @@ function handleNameSort(){
 }
 // }
 }
-let count=0;
+
 function appendData(data){
     document.querySelector("#products").innerHTML=null
-    count++
+    // count++
+    let count=0;
     data.forEach((elem)=>{
         let div=document.createElement("div")
         div.addEventListener("click",function(){
             item(elem)
         })
-        // count++
+        count++
         let brandName=document.createElement("h4")
         brandName.innerText=elem.brandName
         let name=document.createElement("p")
@@ -221,4 +225,8 @@ let blip=async()=>{
     let datav=await res.json()
     localStorage.setItem("bestItem",JSON.stringify(datav))  
     window.location.href="./best_item.html"
+}
+
+function homebtn(){
+    window.location.href="./index.html"
 }

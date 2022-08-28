@@ -26,11 +26,11 @@ body {
 
   display: flex;
 
-  text-align: center;
+  text-align: left;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  justify-content: left;
   font-size: 14px;
   margin-top: 2rem;
 }
