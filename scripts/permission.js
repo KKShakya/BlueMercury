@@ -1,28 +1,23 @@
 
 
-let wish=document.querySelector("#permission")
 
 
-let nav=document.querySelector("#navbar")
 
-let obja={
-    name:"sdfdf",
-    email:"rickysakhare@gmail.com"
-}
 
-localStorage.setItem("user", JSON.stringify(obja))
-
-let user=JSON.parse(localStorage.getItem("user"))
-
+let Logged_In_User=JSON.parse(localStorage.getItem("LoginUser")) || [];
+console.log(Logged_In_User);
 
 let permission1 = ()=>{
-    if(user.name==""){
+    if(Logged_In_User.length === 0){
         
-        window.location.href="./spiffy.com/signin.html"
-
+        window.location.href="./signin.html"
+        
         console.log("dsijdsis")
     }else{
-        alert("welcome to wishlist")
+        // alert("welcome to cart")
+        
+        window.location.href="./Cart.html"
+        // console.log("im else")
     }
 }
 

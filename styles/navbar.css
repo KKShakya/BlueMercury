@@ -48,7 +48,7 @@
 
       .home-link {
         color: #617b9b;
-        min-width: 129px;
+        min-width: 100px;
         max-width: 200px;
         margin-left: 13em;
         margin-top: 1.5em;
@@ -248,6 +248,14 @@
       
 /* media queries */
       @media all and (max-width: 1000px){
+      #nav_link,.free-rewards{
+        padding-right: 400px;
+        margin-right: -30em;
+      }
+      #navbar{
+      padding-right: 400px;
+      margin-right: -30em;
+      }
       #menu{
         visibility:hidden;
         display: none;
@@ -259,6 +267,22 @@
       .shop_links ul li{
        margin-left:-5em;
       }
+
+
+      .home-link a{
+        align-self: center;
+        color: #617b9b;
+        min-width: 50px;
+        max-width: 200px;
+        margin-left: -10em;
+        /* margin-top: 1.5em; */
+      }
+      .home-link img {
+        max-width: 100%;
+        display: inline-block;
+        margin-left: 2em;
+      }
+
     }
 
 
@@ -273,177 +297,3 @@
       font-size: 12px;
     }
 
-#navbar {
-  font-family: "Roboto", "Montserrat", "Lucida Sans Unicode",
-    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-}
-
-/* location ,logoimage and top-right-menu  css*/
-#nav_link {
-  display: flex;
-  justify-content: space-between;
-  font-family: "Montserrat" sans-serif;
-}
-
-.shop_links ul {
-  display: flex;
-  gap: 1em;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-right: 5rem;
-}
-
-.shop_links ul li,
-#locator {
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
-  margin-top: -1em;
-}
-
-#locator {
-  margin-left: 3em;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-top: -2.1em;
-}
-
-.home-link {
-  color: #617b9b;
-  min-width: 129px;
-  max-width: 200px;
-  margin-left: 13em;
-  margin-top: 1.5em;
-}
-.home-link img {
-  width: 100%;
-  display: inline-block;
-  margin-left: 2em;
-}
-
-/* ?bottom menu css */
-#menu ul {
-  font-family: "Montserrat" Light, sans-serif;
-  display: flex;
-  justify-content: center;
-  gap: 4em;
-  line-height: 24px;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: lighter;
-  color: #b4bbc7;
-}
-
-/* shop menu of hover; */
-.shop-container {
-  visibility: hidden;
-  display: none;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-top: 1.6em;
-  border-top: 1px solid rgb(219, 215, 215);
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-}
-#menu ul li:hover > div,
-.shop-container:hover {
-  visibility: visible;
-  display: inline-flex;
-  transition: ease-in-out 250ms;
-  background-color: #fff;
-}
-
-/* //right -arrow hover property */
-.left-part ul li > a:hover + .right-arrow,
-.left-part ul li > a:hover {
-  visibility: visible;
-  color: #12284c;
-}
-
-/* another conatiner inside shop conatiner */
-.shop-item {
-  width: 70%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 6fr;
-  margin-top: 1em;
-  /* padding-top:1.5em; */
-}
-
-.left-part {
-  border-right: 1px solid rgb(219, 215, 215);
-}
-.left-part ul li > a {
-  font-size: 1rem;
-  color: #95adca;
-}
-.right-arrow {
-  visibility: hidden;
-  /* background-color: rgb(53, 16, 216);; */
-}
-.ul-styling {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 4em;
-}
-
-#navbar a,
-i {
-  display: inline-block;
-  text-decoration: none;
-}
-
-
-
-
-/* right part of border designing having twolist and image */
-.right-part {
-  /* border:1px solid yellow; */
-  display: flex;
-  justify-content: start;
-}
-
-.right-part ul li {
-  font-size: 13px;
-  color: red;
-  margin-bottom: -4em;
-}
-
-.right-part ul li > a {
-  color: #95adca;
-  text-transform: none;
-}
-#image-container {
-  width: 35%;
-  margin-left: 2em;
-}
-#image-container h4 {
-  margin-bottom: -10px;
-  text-transform: none;
-  color: #55657f;
-}
-h4 + p {
-  font-size: 12px;
-}
-
-/* new  conatiner*/
-.wd-50 {
-  display: flex;
-  justify-content: center;
-}
-.new-list li > a {
-  color: #617b9b;
-  text-transform: none;
-}
-
-
-
-
-
-.free-rewards {
-  background-color: #d7ebf2;
-  color: #12284c;
-  text-align: center;
-  padding: 8px 0px;
-  font-size: 12px;
-}
