@@ -28,6 +28,7 @@
     height: 40px;
     margin: 15px;
     margin-left: 0px;
+    font-size: 20px;
 }
 .box2{
     height: 600px;
@@ -65,4 +66,9 @@
 #products div{
     cursor: pointer;
     /* border: 2px solid blue; */
+}
+.box1 select *{
+    /* background-color: blue; */
+    font-size: 20px;
+    transition: 1s;
 }

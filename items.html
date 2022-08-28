@@ -15,11 +15,13 @@
   />
 </head>
 <link rel="stylesheet" href="./styles/navbar.css" />
+<link rel="stylesheet" href="./styles/footer.css">
 <style>
     #item-container{
         display: flex;
         justify-content: space-around;
         margin-top: 40px;
+        margin-bottom: 30px;
     }
     .box1{
       box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -39,6 +41,7 @@
       cursor: pointer;
       background-color: #0e0ead;
       color: white;
+      border-right: none;
     }
     .material-symbols-outlined{
       margin-left: 35px;
@@ -77,6 +80,15 @@
     margin-left: 40rem;
     cursor: pointer;
   }
+  #incbutton{
+    width: 7rem;
+    height: 3rem;
+    font-size: 26px;
+    background-color: #0e0ead;
+    border: 2px solid black;
+    color: white;
+    border-left: none;
+  }
 </style>
 <body>
     <div id="navbar"></div>
@@ -92,15 +104,20 @@
       <h4>Returns & Exchanges are free and accepted in store and by mail within 60 days of purchase. </h4>
       <p>Orders placed by 3 p.m. Eastern time will be processed the same business day. Orders placed on weekends and holidays will be processed the next business day. </p>
     </div>
+    <p onclick="homebtn()" style="cursor: pointer;margin-left: 10px;margin-top: 25px;">Home> <span>Item</span></p>
     <div id="item-container">
     </div>
+    <div id="footer"></div>
 </body>
 </html>
 <script type="module">
     import {navbar} from './components/modules/navbar.js'
-    // console.log(navbar());
-    document.getElementById("navbar").innerHTML = navbar();
+    document.getElementById("navbar").innerHTML =await navbar();
   </script>
+  <script type="module">
+    import {footer} from "./components/modules/footer.js";
+    document.getElementById("footer").innerHTML= await footer()
+    </script>
   <script>
     function shipItem(){
     let cartbox=document.querySelector("#cartBox")
@@ -109,11 +126,6 @@
 document.querySelector("#close").addEventListener('click',function(){
     let giftbox=document.querySelector("#cartBox").style.display="none"
 })
-// function close(){
-//   console.log('ravi')
-//   let cartbox=document.querySelector("#cartBox")
-//       cartbox.style.display="none"
-// }
   </script>
 <script>
 let data=JSON.parse(localStorage.getItem("items"))
@@ -165,13 +177,8 @@ function appendData(data){
     })
 
     let incbutton=document.createElement("button")
-    incbutton.innerText="+"
-    incbutton.setAttribute("class","btn")
-    let desbutton=document.createElement("button")
-    desbutton.innerText="-"
-    desbutton.setAttribute("class","btn")
-    let itemAmount=document.createElement("h3")
-    itemAmount.innerText=1
+    incbutton.innerText=data.currentSku.listPrice
+    incbutton.setAttribute("id","incbutton")
     let shipbutton=document.createElement("button")
     shipbutton.innerText="Shipping & Returns"
     shipbutton.setAttribute("id","shipbutton")
@@ -183,8 +190,11 @@ function appendData(data){
     
     button.append(span)
     div.append(image)
-    div1.append(brandName,name,id,rating,review,price,button,incbutton,itemAmount,desbutton,shipbutton)
+    div1.append(brandName,name,id,rating,review,price,button,incbutton,shipbutton)
     document.querySelector("#item-container").append(div,div1)
 
+}
+function homebtn(){
+    window.location.href="./index.html"
 }
 </script>
