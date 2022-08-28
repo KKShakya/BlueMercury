@@ -12,10 +12,11 @@ function login() {
   }
   if (flag == true) {
     alert('Logged In');
-  } else {
+    location.replace("./index.html")
+  } else if(flag == false) {
     alert('Wrong email or password');
   }
 
-    location.replace("./index.html")
+    
 
 }

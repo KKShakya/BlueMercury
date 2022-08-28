@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/footer.css">
     <!-- Navbar -->
     <link rel="stylesheet" href="./styles/navbar.css">
+    <!-- <link rel="stylesheet" href="./scripts/spa.js"> -->
      <!-- font family from google -->
      <link
      rel="stylesheet"
@@ -20,12 +21,11 @@
      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
    />
     <style>
-      body{
+      /* body{
         margin-top: 0px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
+      } */
           .mapouter {
-              position: relative;
               text-align: right;
               height: 1300px;
               width: 940px;
@@ -36,9 +36,7 @@
               background: none !important;
               height: 1300px;
               width: 100%;
-              position:absolute;
               /* border: 1px solid yellow; */
-             display: inline;
               /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
             }
             body1{
@@ -57,7 +55,7 @@
               /* border: 2px solid black; */
               height: 100%;
               width:400px;
-              /* padding: 10px; */
+              padding: 10px;
             }
             #search{
               /* padding: 10px; */
@@ -100,7 +98,7 @@
         <iframe
           width="100%"
           height="100%"
-         
+          id="gmap_canvas"
           src=""
           frameborder="0"
           scrolling="no"
@@ -114,7 +112,7 @@
   <footer id="footer"></footer>
 </body>
 </html>
-<script src="scripts/spa.js"></script>
+<script src="./scripts/spa.js"></script>
 <script type="module">
   import {navbar} from './components/modules/navbar.js'
   // console.log(navbar());
@@ -123,7 +121,7 @@
 
 <!-- <script src="./scripts/signup.js"></script> -->
 
-</script>
+
 
 <script type="module">
 import {footer} from "./components/modules/footer.js";

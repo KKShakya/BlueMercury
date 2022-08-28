@@ -1,19 +1,6 @@
 
 
-let wish=document.querySelector("#permission")
-
-
-let nav=document.querySelector("#navbar")
-
-let obja={
-    name:"sdfdf",
-    email:"rickysakhare@gmail.com"
-}
-
-localStorage.setItem("user", JSON.stringify(obja))
-
 let user=JSON.parse(localStorage.getItem("user"))
-
 
 let permission1 = ()=>{
     if(user.name==""){
@@ -25,13 +12,3 @@ let permission1 = ()=>{
         alert("welcome to wishlist")
     }
 }
-
-
-
-
-
-
-
-
-
-

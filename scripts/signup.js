@@ -8,11 +8,15 @@ let register = ()=>{
         mobile : document.getElementById('mobile').value,
         description : document.getElementById('description').value
     }
-
-   Data.push(register_data)
-   localStorage.setItem("user",JSON.stringify(Data))
-   alert ("You account has been created")
-   window.location.href = "signin.html"
+    if(register_data.email=="" || register_data.name=="" || register_data.password==""){
+        alert("Please enter your email and name")
+    }else{
+        Data.push(register_data)
+        localStorage.setItem("user",JSON.stringify(Data))
+        alert ("You account has been created")
+        window.location.href = "signin.html"
+    }
+  
 }
 function tik(){
     document.getElementById("birth").style.display="inline"
