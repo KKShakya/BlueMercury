@@ -1,7 +1,7 @@
 
 
 
-function footer(){
+async function footer(){
     
     return `
     

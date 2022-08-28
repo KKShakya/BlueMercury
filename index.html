@@ -24,7 +24,8 @@
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
 
-
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="icon" type="image/x-icon" href="./components/images/fevicon.png">
   </head>
 
   
@@ -208,7 +209,9 @@
       </div>
     </div>
 
-    <footer id="footer"></footer>
+    <div id="footer">
+
+    </div>
 
 
 </script>
@@ -230,11 +233,18 @@
 
 </script>
 
+<script type="module">
+  import { footer } from "./components/modules/footer.js";
+  // console.log(navbar());
+  document.getElementById("footer").innerHTML = await footer();
+  
+</script>
+
 <script src="scripts/index.js"></script>
 
 <script src="scripts/permission.js"></script>
 
-
+<script src="scripts/New_arrivel.js"></script>
 
  <!-- slick slider  -->
  

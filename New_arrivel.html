@@ -17,12 +17,13 @@
 <link rel="stylesheet" href="./styles/navbar.css" />
 <link rel="stylesheet" href="./styles/newArrivels.css">
 <link rel="stylesheet" href="./styles/footer.css">
+<link rel="icon" type="image/x-icon" href="./components/images/fevicon.png">
 <body onload="main()">
     <div id="navbar"></div>
     <div id="main">
         
 <div class="box1">
-    <p>Home> <span></span></p>
+    <p onclick="homebtn()" style="cursor: pointer">Home> <span></span></p>
     <h4 style="margin-bottom: -20px; margin-top: 26px;">NEW ARRIVALS CATEGORY</h4>
     <h6 style="margin-bottom: 0px">Select one to narrow results</h6>
     <hr>
@@ -35,7 +36,7 @@
     </ul>
      <h3>Filter New Arrivels By</h3>
      <select name="Type" id="type">
-        <option value="">Types</option>
+        <option value=""> Types</option>
         <option value="">Bar Soaps</option>
         <option value="">Bath And Body Sets</option>
         <option value="">Bath Salts</option>

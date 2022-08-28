@@ -16,9 +16,10 @@
 </head>
 <link rel="stylesheet" href="./styles/navbar.css" />
 <link rel="stylesheet" href="./styles/footer.css">
+<link rel="icon" type="image/x-icon" href="./components/images/fevicon.png">
 <style>
     .heading1{
-        margin: 90px;
+        margin: 75px;
         font-family: "Roboto", "Montserrat", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
         letter-spacing: 3px;
         color: rgb(35, 35, 63);
@@ -79,6 +80,7 @@
         cursor: pointer;
         background-color: #111154;
         border: 2px solid #111154;
+        
     }
     #gift-box{
         width: 80%;
@@ -88,9 +90,15 @@
         padding: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
+    #last-col{
+        display: flex;
+        margin-top: 75px;
+        justify-content: center;
+    }
 </style>
 <body>
     <div id="navbar"></div>
+    <p onclick="homebtn()" style="cursor: pointer;margin-left: 10px;margin-top: 35px;">Home > <span>Item</span></p>
     <h1 class="heading1">YOUR BAG</h1>
     <div class="cart-box">
     <h2>Your Cart (<span></span> item )</h2>
@@ -121,18 +129,18 @@
 
     <h1>Total:-$<span>0</span></h1>
     <p style="text-align: right;">Shipping,Taxes,Beauty Cards and additional discounts applied at checkout</p>
-     <button><a style="color: white" href="checkout.html">CHECKOUT</button></a> 
+     <button><a style="color: white;text-decoration: none;" href="checkout.html">CHECKOUT</button></a> 
 </div>
 <div id="footer"></div>
 </body>
 </html>
 <script type="module">
     import {navbar} from './components/modules/navbar.js'
-    document.getElementById("navbar").innerHTML = navbar();
+    document.getElementById("navbar").innerHTML = await navbar();
   </script>
 <script type="module">
     import {footer} from "./components/modules/footer.js";
-    document.getElementById("footer").innerHTML=footer()
+    document.getElementById("footer").innerHTML= await footer()
     </script>
   <script>
 
@@ -201,9 +209,16 @@ data.forEach((elem,index)=>{
     desbutton.setAttribute("class","btn")
     let itemAmount=document.createElement("h3")
     itemAmount.innerText=1;
-    let td4=document.createElement("td")
+    let td5=document.createElement("td")
+    td5.setAttribute("id","last-col")
+    let td4=document.createElement("p")
     let prices=elem.currentSku.listPrice.substring(1)
-    td4.innerText="$"+prices
+    td4.innerText=prices
+
+
+    let currencyitem=document.createElement("p")
+    currencyitem.innerText="$"
+
     
     let subtotal=document.querySelector(".cart-box>h1>span")
     sum=sum+Number(prices)
@@ -212,7 +227,8 @@ data.forEach((elem,index)=>{
     td1.append(image,name)
     div.append(incbutton,itemAmount,desbutton)
     td3.append(div,remove)
-    tr.append(td1,td2,td3,td4)
+    td5.append(currencyitem,td4)
+    tr.append(td1,td2,td3,td5)
     document.querySelector("#table").append(tr)
 })
 
@@ -222,6 +238,9 @@ function removes(index){
     data.splice(index,1)
     localStorage.setItem("cartData",JSON.stringify(data))
     window.location.reload(true)
+}
+function homebtn(){
+    window.location.href="./index.html"
 }
   </script>
   

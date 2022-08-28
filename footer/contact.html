@@ -11,7 +11,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
- 
 <head>
   <style>
     #cont{
@@ -157,7 +156,7 @@ import { navbar } from "../components/modules/navbar.js"
 
 let container1 = document.getElementById("navbar1");
 
-container1.innerHTML = navbar();
+container1.innerHTML = await navbar();
 
 </script>
 
@@ -167,7 +166,7 @@ container1.innerHTML = navbar();
   
   let container2 = document.getElementById("footer1");
   
-  container2.innerHTML = footer();
+  container2.innerHTML = await footer();
   
   </script>
 

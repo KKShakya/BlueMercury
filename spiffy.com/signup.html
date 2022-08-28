@@ -63,6 +63,7 @@
 </body>
 </html>
 <script src="signup.js"></script>
+
 <script type="module">
     import {navbar} from '../components/modules/navbar.js'
     // console.log(navbar());
@@ -70,10 +71,11 @@
   </script>
 
 
-
-</script>
-
 <script type="module">
+
 import {footer} from "../components/modules/footer.js";
-document.getElementById("footer").innerHTML=footer()
+document.getElementById("footer").innerHTML= await footer()
+
 </script>
+
+ 
