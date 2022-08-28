@@ -1,34 +1,27 @@
-*{
-    color: rgb(13, 13, 76);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
 
-
-div{
+#container{
     min-width: 40%;
     max-width: 45%;
     /* border: 1px solid red; */
     margin: auto;
-    margin-top: 250px;
+    margin-top: 150px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-input{
+#container>input{
     display:block;
     max-width:100%;
     min-width: 93%;    
     margin: auto;
     padding: 10px;    
 }
-h1{
+#container>h1{
     color: rgb(13, 13, 76);
     text-align: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
-p{
+#container>p{
     text-align: center;
 }
-button{
+#container>button{
     width: 97%;
     padding: 10px;
     background-color: rgb(13, 13, 76);

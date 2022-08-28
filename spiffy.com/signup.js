@@ -10,7 +10,9 @@ let register = async () =>{
     }
 
    Data.push(register_data)
- localStorage.setItem("user",JSON.stringify(Data))
+   localStorage.setItem("user",JSON.stringify(Data))
+   alert ("You account has been created")
+   window.location.href = "signin.html"
 }
 function tik(){
     document.getElementById("birth").style.display="inline"
