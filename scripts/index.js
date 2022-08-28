@@ -21,17 +21,7 @@ let arr3 = [
 
 let i = 0;
 
-function radio1() {
-  i = 0;
-}
 
-function radio2() {
-  i = 1;
-}
-
-function radio3() {
-  i = 2;
-}
 
 function slideshow() {
 
@@ -195,6 +185,13 @@ function display3(arr) {
     // console.log(div);
   }
 }
+
+
+document.querySelector("#new_arrivalsh2").addEventListener("click", function(){
+
+  window.location.href="./New_arrivel.html"
+
+})
 
 function routine_Reboot_page(){
   console.log("roputine");
