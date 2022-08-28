@@ -250,8 +250,21 @@ body {
   width: 32rem;
 }
 
+
+
+
+#new_arrivalsh2:hover{
+  cursor: pointer;
+}
+
+
 @media all and (max-width: 1045px){
   /* slide part                                                                                changes*/
+
+  .home-link {
+   border: 1px solid red;
+  }
+
 
   #slide_link {                                                                 
     margin: auto;
@@ -376,11 +389,7 @@ body {
   margin: auto;
 }
 
-  }
-  
-  
-  
-  
-  
+
+} 
   
     

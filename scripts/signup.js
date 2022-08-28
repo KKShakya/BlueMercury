@@ -1,4 +1,5 @@
 let Data=JSON.parse(localStorage.getItem("user"))||[]
+
 let register = ()=>{     
     let register_data = {
         email: document.getElementById('email').value,
