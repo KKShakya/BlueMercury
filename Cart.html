@@ -16,6 +16,7 @@
 </head>
 <link rel="stylesheet" href="./styles/navbar.css" />
 <link rel="stylesheet" href="./styles/footer.css">
+<link rel="icon" type="image/x-icon" href="./components/images/fevicon.png">
 <style>
     .heading1{
         margin: 75px;
@@ -89,10 +90,15 @@
         padding: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
+    #last-col{
+        display: flex;
+        margin-top: 75px;
+        justify-content: center;
+    }
 </style>
 <body>
     <div id="navbar"></div>
-    <p onclick="homebtn()" style="cursor: pointer;margin-left: 10px;margin-top: 35px;">Home> <span>Item</span></p>
+    <p onclick="homebtn()" style="cursor: pointer;margin-left: 10px;margin-top: 35px;">Home > <span>Item</span></p>
     <h1 class="heading1">YOUR BAG</h1>
     <div class="cart-box">
     <h2>Your Cart (<span></span> item )</h2>
@@ -203,9 +209,16 @@ data.forEach((elem,index)=>{
     desbutton.setAttribute("class","btn")
     let itemAmount=document.createElement("h3")
     itemAmount.innerText=1;
-    let td4=document.createElement("td")
+    let td5=document.createElement("td")
+    td5.setAttribute("id","last-col")
+    let td4=document.createElement("p")
     let prices=elem.currentSku.listPrice.substring(1)
-    td4.innerText="$"+prices
+    td4.innerText=prices
+
+
+    let currencyitem=document.createElement("p")
+    currencyitem.innerText="$"
+
     
     let subtotal=document.querySelector(".cart-box>h1>span")
     sum=sum+Number(prices)
@@ -214,7 +227,8 @@ data.forEach((elem,index)=>{
     td1.append(image,name)
     div.append(incbutton,itemAmount,desbutton)
     td3.append(div,remove)
-    tr.append(td1,td2,td3,td4)
+    td5.append(currencyitem,td4)
+    tr.append(td1,td2,td3,td5)
     document.querySelector("#table").append(tr)
 })
 

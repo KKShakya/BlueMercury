@@ -116,6 +116,7 @@ let res=await fetch(url,{
 });
 let data=await res.json()
 let datas=data.products
+console.log(datas.brandName)
 appendData(datas)
 
 
@@ -124,39 +125,41 @@ function handleNameSort(){
     let selected=document.querySelector("#sort").value
     
     if(selected==="LTH"){
+        // console.log(datas.currentSku.listPrice)
         datas.sort(function(a,b){   
             if(a.currentSku.listPrice>b.currentSku.listPrice) return 1;
             if(a.currentSku.listPrice<b.currentSku.listPrice) return -1;
             return 0;
         })
+        // console.log(datas)
         appendData(datas)
     }
     else if(selected="HTL"){
         datas.sort(function(a,b){   
             if(a.currentSku.listPrice>b.currentSku.listPrice) return -1;
-            if(a.currentSku.listPrice<b.currentSku.listPrice) return 11;
+            if(a.currentSku.listPrice<b.currentSku.listPrice) return 1;
             return 0;
         })
+        console.log(datas)
         appendData(datas)
     }
     else if(selected="Ascending"){
         datas.sort(function(a,b){   
-            let x=a.displayName.toUpperCase();
-            let y=b.displayName.toUpperCase();
-            if(x>y) return 1;
-            if(x<y) return -1;
+            if(a.rating>b.rating) return 1;
+            // console.log(a.rating)
+            if(a.rating<b.rating) return -1;
             return 0;
         })
+        // console.log(datas)
         appendData(datas)
     }
     else if(selected="Descending"){
         datas.sort(function(a,b){   
-            let x=a.displayName.toUpperCase();
-            let y=b.displayName.toUpperCase();
-            if(x>y) return -1;
-            if(x<y) return 1;
+            if(a.rating>b.rating) return -1;
+            if(a.rating<b.rating) return 1;
             return 0;
         })
+        // console.log(datas)
         appendData(datas)
     }
 
@@ -166,7 +169,6 @@ function handleNameSort(){
 
 function appendData(data){
     document.querySelector("#products").innerHTML=null
-    // count++
     let count=0;
     data.forEach((elem)=>{
         let div=document.createElement("div")
@@ -182,8 +184,10 @@ function appendData(data){
         image.src=elem.heroImage
         let price=document.createElement("p")
         price.innerText=elem.currentSku.listPrice
+        let rating=document.createElement("p")
+        rating.innerText=`Rating:- ${elem.rating}`
 
-        div.append(image,brandName,name,price)
+        div.append(image,brandName,name,price,rating)
         document.querySelector("#products").append(div)
         document.querySelector(".result>span").innerText=count;
     })

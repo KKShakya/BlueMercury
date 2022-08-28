@@ -16,6 +16,7 @@
 </head>
 <link rel="stylesheet" href="./styles/navbar.css" />
 <link rel="stylesheet" href="./styles/footer.css">
+<link rel="icon" type="image/x-icon" href="./components/images/fevicon.png">
 <style>
     #item-container{
         display: flex;
@@ -104,7 +105,7 @@
       <h4>Returns & Exchanges are free and accepted in store and by mail within 60 days of purchase. </h4>
       <p>Orders placed by 3 p.m. Eastern time will be processed the same business day. Orders placed on weekends and holidays will be processed the next business day. </p>
     </div>
-    <p onclick="homebtn()" style="cursor: pointer;margin-left: 10px;margin-top: 25px;">Home> <span>Item</span></p>
+    <p onclick="homebtn()" style="cursor: pointer;margin-left: 10px;margin-top: 25px;">Home > <span>Item</span></p>
     <div id="item-container">
     </div>
     <div id="footer"></div>
@@ -169,6 +170,7 @@ function appendData(data){
       
       if(rav==raav){
         alert("Item already added in Cart")
+        window.location.href="Cart.html"
       }else{
       arr.push(data)
       localStorage.setItem("cartData",JSON.stringify(arr))
