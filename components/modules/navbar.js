@@ -3,7 +3,7 @@ async function navbar(){
   <!-- locator -->
   <div id="locator">
     <span class="material-symbols-outlined"> location_on </span>
-    <a class="nav-link-text-key" href="../spiffy.com/spa.html">Store & Spa locator</a>
+    <a class="nav-link-text-key" href="./spa.html">Store & Spa locator</a>
   </div>
    
   <!-- logo of bluemercury -->
@@ -26,12 +26,12 @@ async function navbar(){
         <a class="nav-link-text-key">Search</a>
       </li>
       <li>
-        <a class="material-symbols-outlined" href="./spiffy.com/signin.html"> account_circle </a>
-        <a class="nav-link-text-key" href="./spiffy.com/signin.html">SignIn/Up</a>
+        <a class="material-symbols-outlined" href="./signin.html"> account_circle </a>
+        <a class="nav-link-text-key" href="./signin.html">SignIn/Up</a>
       </li>
       <li>
-        <a class="material-symbols-outlined" href="cart.html"> shopping_bag </a>
-        <a class="nav-link-text-key" href="cart.html">Bag</a>
+        <a class="material-symbols-outlined" href="./cart.html"> shopping_bag </a>
+        <a class="nav-link-text-key" href="./cart.html">Bag</a>
       </li>
     </ul>
   </div>
