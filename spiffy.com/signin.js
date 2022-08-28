@@ -16,6 +16,6 @@ function login() {
     alert('Wrong email or password');
   }
 
-    location.replace("account.html")
+    location.replace("./index.html")
 
 }

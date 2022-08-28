@@ -131,6 +131,12 @@
   // console.log(navbar());
   document.getElementById("navbar").innerHTML = navbar();
 </script>
+</script>
+
+<script type="module">
+import {footer} from "./components/modules/footer.js";
+document.getElementById("footer").innerHTML=footer()
+</script>
 
 <script>
   let flag=false;
@@ -159,6 +165,13 @@
       alert (`${name} Your order is placed succefully`)
     }
   };
+</script>
+
+<script type="module">
+import {footer} from "./components/modules/footer.js";
+document.getElementById("footer").innerHTML=footer()
+</script>
+<!-- footer -->
 </script>
 
 <script type="module">
